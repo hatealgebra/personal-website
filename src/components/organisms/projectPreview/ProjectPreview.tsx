@@ -44,13 +44,7 @@ const ProjectPreview = ({
           className="project-preview_img"
           layers={[
             {
-              children: (
-                <StaticImage
-                  src="../assets/images/pancakes.jpg"
-                  alt="Macbook with open IDE with the lamp"
-                  style={{ height: "100%", width: "100%" }}
-                />
-              ),
+              children: image,
               speed: -20,
             },
           ]}

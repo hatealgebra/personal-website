@@ -36,8 +36,9 @@ const WorkShowcase = () => {
             liveLink={data.live_link}
             image={
               <StaticImage
-                src="../../../assets/images/pancakes.jpg"
-                alt="Pancakes"
+                src="../../../assets/images/coming-soon.jpg"
+                alt="coming soon"
+                style={{ height: "100%", width: "100%" }}
               />
             }
           >

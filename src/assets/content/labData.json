@@ -7,7 +7,7 @@
       "live_link": "https://www.whateverPage.com",
       "spice": "What ever",
       "preview_text": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
-      "images": "whateverGroup"
+      "images": "../assets/images/pancakes.jpg"
     },
     {
       "name": "Weather app",
@@ -16,7 +16,7 @@
       "live_link": "https://www.whateverPage.com",
       "spice": "What ever",
       "preview_text": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
-      "images": "whateverGroup"
+      "images": "../assets/images/weather-preview.jpg"
     }
   ]
 }

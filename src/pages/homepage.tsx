@@ -228,8 +228,9 @@ const IndexPage = () => {
               liveLink={data.live_link}
               image={
                 <StaticImage
-                  src="../assets/images/pancakes.jpg"
+                  src={"../assets/images/coming-soon.jpg"}
                   alt="Pancakes"
+                  style={{ width: "100%", height: "100%" }}
                 />
               }
             >
@@ -249,7 +250,7 @@ const IndexPage = () => {
             {
               children: (
                 <StaticImage
-                  src="../assets/images/pancakes.jpg"
+                  src="../assets/images/portrait.jpg"
                   alt="Hobby photo"
                   style={{
                     width: "100%",
