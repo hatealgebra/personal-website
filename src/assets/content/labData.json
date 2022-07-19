@@ -1,0 +1,22 @@
+{
+  "lab": [
+    {
+      "name": "Food Mood",
+      "date": "2020",
+      "tech_stack": ["TypeScript", "CSS", "HTML", "Styled Components"],
+      "live_link": "https://www.whateverPage.com",
+      "spice": "What ever",
+      "preview_text": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
+      "images": "whateverGroup"
+    },
+    {
+      "name": "Weather app",
+      "date": "2020",
+      "tech_stack": ["TypeScript", "CSS", "HTML", "Styled Components"],
+      "live_link": "https://www.whateverPage.com",
+      "spice": "What ever",
+      "preview_text": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
+      "images": "whateverGroup"
+    }
+  ]
+}

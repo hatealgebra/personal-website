@@ -1,0 +1,24 @@
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
+import theme from "./Theme";
+
+<Meta title="Style Guide/Typography" />
+
+# Typography
+
+**Font:** Work Sans
+
+**Weight:** 400(regular), 500(medium), 600(semibold), 700(bold), 800(black)
+
+<Typeset
+  fontSizes={[
+    theme.fontSize.sm,
+    theme.fontSize.md,
+    theme.fontSize.lg,
+    theme.fontSize.xl,
+    theme.fontSize["2xl"],
+    theme.fontSize["3xl"],
+    theme.fontSize["4xl"],
+  ]}
+  fontWeight={theme.typography.medium}
+  fontFamily={theme.fonts.primary}
+/>
