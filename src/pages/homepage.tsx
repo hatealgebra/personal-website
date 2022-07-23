@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import styled from "styled-components";
 import Theme from "../components/particles/Theme";
@@ -9,21 +9,22 @@ import Container from "../components/molecules/container/Container";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 import { FaCode } from "@react-icons/all-files/fa/FaCode";
 
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import Link from "../components/atoms/link/link.styled";
 import ProjectPreview from "../components/organisms/projectPreview/ProjectPreview";
 import Button from "../components/atoms/button/button.styled";
 import PageTemplate from "../components/templates/Page.template";
 
 import LabDataJSON from "../assets/content/labData.json";
+import CopyWriteJSON from "../assets/content/copyWrite.json";
 
 import { Fade } from "react-awesome-reveal";
 import { DEVICE as device } from "../utils/helpers";
 import { LINKS } from "../utils/contants";
 import { ParallaxBanner } from "react-scroll-parallax";
 import useWindowSize from "../utils/hooks/useWindowSize";
-
-console.log(device);
+import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
+import { graphql, useStaticQuery } from "gatsby";
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
@@ -123,8 +124,43 @@ const HeroContainer = styled.div<HeroContainerProps>`
 
 const IndexPage = () => {
   const [heroScroll, setHeroScroll] = useState<boolean>(false);
+  const homepageContent = CopyWriteJSON.pages.homepage;
 
   const windowSize = useWindowSize();
+
+  const data = useStaticQuery(graphql`
+    query {
+      weatherApp: allFile(filter: { relativeDirectory: { eq: "weatherApp" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      foodMood: allFile(filter: { relativeDirectory: { eq: "foodMood" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const images = [
+    getImage(data.foodMood.edges[0].node.childImageSharp),
+    getImage(data.weatherApp.edges[0].node.childImageSharp),
+  ];
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
@@ -134,6 +170,7 @@ const IndexPage = () => {
 
   return (
     <PageTemplate>
+      <ProjectDetail />
       <HeroContainer scroll={heroScroll}>
         <div className="hero_part hero_part--hidden" />
         <div className="hero_part" />
@@ -164,11 +201,6 @@ const IndexPage = () => {
       </HeroContainer>
       <Container grid={true}>
         <HeadingCode>My self</HeadingCode>
-        {/* <StaticImage
-          src="../assets/coding.jpg"
-          alt="Macbook with open IDE with the lamp"
-          style={{ width: "300px", height: "300px" }}
-        /> */}
         <ParallaxBanner
           layers={[
             {
@@ -176,7 +208,6 @@ const IndexPage = () => {
                 <StaticImage
                   src="../assets/images/coding.jpg"
                   alt="Macbook with open IDE with the lamp"
-                  objectPosition="bottom"
                   style={{ height: "100%", width: "100%" }}
                 />
               ),
@@ -203,7 +234,7 @@ const IndexPage = () => {
             Batman comics.
           </p>
         </div>
-        <Link>What I can do</Link>
+        <Link to={LINKS.about}>What I can do</Link>
       </Container>
       <Container variant="projects" background="black">
         <StaticImage
@@ -227,8 +258,8 @@ const IndexPage = () => {
               date={data.date}
               liveLink={data.live_link}
               image={
-                <StaticImage
-                  src={"../assets/images/coming-soon.jpg"}
+                <GatsbyImage
+                  image={images[index]}
                   alt="Pancakes"
                   style={{ width: "100%", height: "100%" }}
                 />
@@ -243,7 +274,7 @@ const IndexPage = () => {
         </div>
       </Container>
       <Container>
-        <h2>Bball,</h2>
+        <h2>{homepageContent.sectionWMyPhoto.heading[0]}</h2>
         <ParallaxBanner
           className="hobby-preview-img"
           layers={[
@@ -269,15 +300,10 @@ const IndexPage = () => {
           }}
         />
         <h2>
-          nolan, <br />
-          race sims
+          {homepageContent.sectionWMyPhoto.heading[1]} <br />
+          {homepageContent.sectionWMyPhoto.heading[2]}
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi iste
-          ex quibusdam eaque voluptate dolore aut sequi harum deleniti aliquid
-          beatae veritatis explicabo id unde culpa, adipisci incidunt dolorum
-          autem!
-        </p>
+        <p>{homepageContent.sectionWMyPhoto.text}</p>
         <Link to={LINKS.about}>More about me</Link>
       </Container>
     </PageTemplate>
@@ -289,3 +315,5 @@ interface HeroContainerProps {
 }
 
 export default IndexPage;
+
+// TODO merge homepage and index pages into the on

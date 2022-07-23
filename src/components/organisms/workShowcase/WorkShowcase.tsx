@@ -2,14 +2,50 @@ import React, { useState } from "react";
 import Container from "../../molecules/container/Container";
 import SwitchMenu from "../../molecules/switchMenu/SwitchMenu";
 import LabDataJSON from "../../../assets/content/labData.json";
+import copyWriteJSON from "../../../assets/content/copyWrite.json";
 import ProjectPreview from "../projectPreview/ProjectPreview";
-import { StaticImage } from "gatsby-plugin-image";
-import { Fade } from "react-awesome-reveal";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+
+const { work: workContent } = copyWriteJSON.pages;
 
 const WorkShowcase = () => {
   const [typeOfWork, setTypeOfWork] = useState<"projects" | "lab">("lab");
 
-  console.log(typeOfWork);
+  const data = useStaticQuery(graphql`
+    query {
+      weatherApp: allFile(filter: { relativeDirectory: { eq: "weatherApp" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      foodMood: allFile(filter: { relativeDirectory: { eq: "foodMood" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const images = [
+    getImage(data.foodMood.edges[0].node.childImageSharp),
+    getImage(data.weatherApp.edges[0].node.childImageSharp),
+  ];
+
   return (
     <Container noAnimation>
       <SwitchMenu
@@ -17,12 +53,7 @@ const WorkShowcase = () => {
         dispatch={setTypeOfWork}
         possibilities={["projects", "lab"]}
       />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        consectetur voluptatum atque veritatis aliquid, sint illum natus enim
-        veniam earum! Rem doloremque ut maiores soluta, ipsa iste nam sequi
-        error.
-      </p>
+      <p>{workContent.labText}</p>
       {typeOfWork === "projects" ? (
         <h3>No Projects here :(</h3>
       ) : (
@@ -35,8 +66,8 @@ const WorkShowcase = () => {
             date={data.date}
             liveLink={data.live_link}
             image={
-              <StaticImage
-                src="../../../assets/images/coming-soon.jpg"
+              <GatsbyImage
+                image={images[index]}
                 alt="coming soon"
                 style={{ height: "100%", width: "100%" }}
               />

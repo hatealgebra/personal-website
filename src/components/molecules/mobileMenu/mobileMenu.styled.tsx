@@ -43,7 +43,7 @@ export const MobileMenuTopBar = styled.div`
 `;
 
 export const MobileMenuContainer = styled.div<{ isOpen: boolean }>`
-  z-index: ${({ isOpen }) => (isOpen ? 100 : -1)};
+  z-index: ${({ isOpen }) => (isOpen ? 99 : -1)};
   position: fixed;
   overflow: hidden;
   display: grid;

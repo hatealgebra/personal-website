@@ -3,9 +3,12 @@ import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import styled from "styled-components";
 import Container from "../components/molecules/container/Container";
+import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
 import WorkShowcase from "../components/organisms/workShowcase/WorkShowcase";
 import Theme from "../components/particles/Theme";
 import PageTemplate from "../components/templates/Page.template";
+
+import copyWriteJSON from "../assets/content/copyWrite.json";
 
 const WorkHeroContainer = styled.div`
   height: 70vh;
@@ -37,9 +40,12 @@ const WorkHeroContainer = styled.div`
   }
 `;
 
+const workContent = copyWriteJSON.pages.work;
+
 const work = () => {
   return (
     <PageTemplate>
+      <ProjectDetail />
       <div style={{ backgroundColor: Theme.color.primary }}>
         <WorkHeroContainer className="work-hero">
           <ParallaxBanner
@@ -62,7 +68,7 @@ const work = () => {
             src="../assets/images/workImage.jpg"
             alt="Macbook with IDE"
           /> */}
-          <h1 className="work-hero__heading">My work.</h1>
+          <h1 className="work-hero__heading">{workContent.heading}.</h1>
         </WorkHeroContainer>
       </div>
       <WorkShowcase />

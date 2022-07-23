@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React, { Dispatch } from "react";
+import React, { Dispatch, useContext } from "react";
 import { NavLink } from "../../atoms/link/link.styled";
 import { useLocation } from "@reach/router";
 import { LINKS } from "../../../utils/contants";
@@ -11,6 +11,7 @@ import {
   MobileMenuTopBar,
 } from "./mobileMenu.styled";
 import { ButtonLink } from "../../atoms/button/button.styled";
+import ProjectModalContext from "../../../context/ProjectModalContext";
 
 interface MobileMenuprops {
   isOpen: boolean;
@@ -20,6 +21,9 @@ interface MobileMenuprops {
 const MobileMenu = ({ isOpen, close }: MobileMenuprops) => {
   const linkValues = Object.values(LINKS);
   const { pathname } = useLocation();
+  const { projectModalState } = useContext(ProjectModalContext);
+
+  console.log(projectModalState);
 
   return (
     <MobileMenuContainer isOpen={isOpen}>

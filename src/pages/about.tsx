@@ -12,6 +12,8 @@ import PageTemplate from "../components/templates/Page.template";
 import { DEVICE } from "../utils/helpers";
 import useWindowSize from "../utils/hooks/useWindowSize";
 
+import copyWriteJSON from "../assets/content/copyWrite.json";
+
 const ExpandMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +60,10 @@ const GreetingContainer = styled.div`
   }
 `;
 
+// TODO copywriting man
+
+const aboutContent = copyWriteJSON.pages.about;
+
 const about = () => {
   const windowSize = useWindowSize();
 
@@ -96,36 +102,16 @@ const about = () => {
         />
       </GreetingContainer>
       <Container background="black">
-        <h2 style={{ marginTop: "30px" }} className="text--center">
-          Software Engineer
-        </h2>
-        <p className="paragraph--center">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A maiores
-          nisi eveniet accusamus dicta iure, nam quas ad nemo repellendus odio
-          inventore itaque alias quibusdam voluptates molestiae amet architecto
-          quae.
-        </p>
-        <p className="paragraph--center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-          assumenda aliquid itaque velit, totam et perferendis. Adipisci sequi
-          sed quo neque dolores nobis corrupti repellendus dolorum nemo minus,
-          impedit illum!
-        </p>
-        <h2 style={{ marginTop: "60px" }} className="text--center">
-          My Aim
-        </h2>
-        <p className="paragraph--center">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A maiores
-          nisi eveniet accusamus dicta iure, nam quas ad nemo repellendus odio
-          inventore itaque alias quibusdam voluptates molestiae amet architecto
-          quae.
-        </p>
-        <p className="paragraph--center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-          assumenda aliquid itaque velit, totam et perferendis. Adipisci sequi
-          sed quo neque dolores nobis corrupti repellendus dolorum nemo minus,
-          impedit illum!
-        </p>
+        {aboutContent.aboutMe.introduction.map((eachSection: any) => (
+          <>
+            <h2 style={{ marginTop: "30px" }} className="text--center">
+              {eachSection.heading}
+            </h2>
+            {eachSection.text.map((paragraph: string) => (
+              <p className="paragraph--center">{paragraph}</p>
+            ))}
+          </>
+        ))}
         <ExpandMenu>
           <ExpandItem borders="up" number="01" color="white" name="Tech Stack">
             {data.techStackImages.nodes.map((item, index) => (
@@ -160,10 +146,9 @@ const about = () => {
           "
           >
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              est dolorem consectetur dolore nemo? Deleniti sapiente praesentium
-              illum nostrum nesciunt alias placeat neque in autem, molestias
-              modi voluptates hic natus!
+              Sadly I dont't have currently any real-world application that is
+              normally use, just learning and creating "lab" projects to
+              showcase my work.
             </p>
           </ExpandItem>
         </ExpandMenu>

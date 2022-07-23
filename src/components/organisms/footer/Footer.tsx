@@ -15,9 +15,15 @@ import Link from "../../atoms/link/link.styled";
 import Theme from "../../particles/Theme";
 import { LINKS } from "../../../utils/contants";
 
+import copyWriteJSON from "../../../assets/content/copyWrite.json";
+
 interface FooterProps {}
 
 const { homepage, work, about, contact } = LINKS;
+
+const footerContent = copyWriteJSON.footer;
+
+//  fixme add external links
 
 const Footer = ({}: FooterProps) => {
   return (
@@ -25,12 +31,9 @@ const Footer = ({}: FooterProps) => {
       <FooterStyled>
         <div>
           <h3>
-            Reach <br /> me out
+            {footerContent.heading[0]} <br /> {footerContent.heading[1]}
           </h3>
-          <p>
-            You cant contact me either via social links down below or write me
-            eail via form. Looking forward to hear from you
-          </p>
+          <p>{footerContent.headingText}</p>
         </div>
         <Email>Hello@pavel-vondra.com</Email>
         <SocialIcons>
@@ -51,7 +54,7 @@ const Footer = ({}: FooterProps) => {
           />
           <LinkList
             heading="Projects"
-            linkData={["homepage", "about me", "projects"]}
+            linkData={["weather app", "food mood"]}
           />
         </LinkListContainer>
       </FooterStyled>

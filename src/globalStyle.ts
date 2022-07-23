@@ -35,7 +35,8 @@ background-color: white;
 
 
 body{
-
+    height: 100%;
+    width: 100%;
     font-family: "Work Sans", sans-serif;
     line-height: 1.3;
     font-weight: 400;
@@ -137,7 +138,8 @@ p{
 }
 
 .paragraph--center{
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .item--dissapear{

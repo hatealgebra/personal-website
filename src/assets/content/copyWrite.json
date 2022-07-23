@@ -1,7 +1,43 @@
 {
-  "pages": {},
+  "pages": {
+    "homepage": {
+      "sectionWMyPhoto": {
+        "heading": ["Bball,", "nolan,", "race sims"],
+        "text": "Little about me. I do like to play basketball, so I can eat more cookies and oreo. Whatever movie that Christopher Nolan makes, it's must see. And if I'm not doing any of the two activies that I've mention before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
+      }
+    },
+    "work": {
+      "heading": "MY WORK",
+      "labText": "Showcase of my work in my freetime. Either I'm learning new things, have new ideas or I want to showcase some of my skill. If you find anything interesting or bugs, please don't hesitate and contact me. Thank you."
+    },
+    "about": {
+      "aboutMe": {
+        "introduction": [
+          {
+            "heading": "Software engineer",
+            "text": [
+              "I’m currently working as fresh software engineer in  maintenance and support for big coporation that makes banking solutions across the world.",
+              "Learning front end development by myself almost 2 years. I have experience in industry as IT-Administrator. Currently looking for extra part-time job, in best case scenario full remote."
+            ]
+          },
+          {
+            "heading": "My Aim",
+            "text": [
+              "… is to write quality code that is functional, testable and sustainable. I’m on the start to become good developer and I’m open to new things and opportunities that can benefit me and others along the way.",
+              "Also I make some basic designing/prototyping as something that comes handy, because on some of the projects I’ve done everything by myself.  Check down below what tech stack I use and other skills."
+            ]
+          }
+        ]
+      }
+    }
+  },
   "menu": {
     "1st": "Currently Software <br /> Engineer at Diebold Nixdorf",
     "2nd": "Based in Pilsen <br /> Czech republic"
+  },
+  "footer": {
+    "heading": ["Reach", "me out"],
+    "headingText": "You can contact me either via social links down below or write me eail via form. Looking forward to hear from you",
+    "email": "HELLO@PAVEL-VONDRA.COM"
   }
 }

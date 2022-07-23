@@ -14,7 +14,7 @@ export const ProjectPreviewContainer = styled.div<{
   text-align: ${(props) => props.orientation};
   margin: 50px 0px;
   box-sizing: border-box;
-
+  cursor: pointer;
   .project-preview {
     box-sizing: border-box;
     &_text {

@@ -2,6 +2,8 @@ import { Ref } from "react";
 import styled from "styled-components";
 import Theme from "../../particles/Theme";
 
+// todo add disabled attribute
+
 export const SwitchMenuButton = styled.button<{
   isClicked: boolean;
   padding?: boolean;

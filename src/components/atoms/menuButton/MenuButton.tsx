@@ -10,7 +10,7 @@ interface MenuButtonProps {
 
 const MenuContainer = styled.button`
   position: fixed;
-  z-index: 99;
+  z-index: 97;
   right: 20px;
   top: 20px;
   display: grid;

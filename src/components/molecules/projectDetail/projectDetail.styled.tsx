@@ -56,17 +56,17 @@ export const ProjectDetailPanel = styled.nav`
 
 export const ProjectDetailContainer = styled.div<{ isOpen: boolean }>`
   position: fixed;
-  display: ${({ isOpen }) => (isOpen && "block") || "none"};
-  box-sizing: border-box;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  display: ${({ isOpen }) => (isOpen && "block") || "none"};
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   background-color: ${Theme.color.primary};
   padding: 20px 5%;
   color: white;
-  z-index: 999;
+  z-index: 99;
   padding-bottom: 70px;
+  animation-fill-mode: backwards !important;
 `;

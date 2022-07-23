@@ -19,7 +19,7 @@ export const NavMenu = styled.nav`
 `;
 
 export const TopBarContainer = styled.div`
-  z-index: 998;
+  z-index: 97;
   position: fixed;
   top: 0;
   left: 0;

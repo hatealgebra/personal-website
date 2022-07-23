@@ -42,11 +42,11 @@ const MyHobbies = () => {
     const tumbler = useLoader(GLTFLoader, "/3dModel/tumbler.glb");
 
     return choosenHobbie === "basketball" ? (
-      <primitive object={basketball.scene} scale={2} />
+      <primitive object={basketball.scene} scale={0.012} />
     ) : choosenHobbie === "music" ? (
-      <primitive object={music.scene} scale={0.005} />
+      <primitive object={music.scene} scale={15} />
     ) : choosenHobbie === "race sims" ? (
-      <primitive object={wheel.scene} scale={1.35} />
+      <primitive object={wheel.scene} scale={1.45} />
     ) : (
       <primitive object={tumbler.scene} scale={1.4} />
     );

@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useState } from "react";
+import React, { ReactElement, ReactNode, useContext, useState } from "react";
 import {
   ProjectPreviewContainer,
   ProjectPreviewHeading,
@@ -8,6 +8,9 @@ import ProjectDetail from "../../molecules/projectDetail/ProjectDetail";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { StaticImage } from "gatsby-plugin-image";
 import { IStaticImageProps } from "gatsby-plugin-image/dist/src/components/static-image.server";
+import ProjectModalContext, {
+  OPEN_MODAL,
+} from "../../../context/ProjectModalContext";
 
 export interface ProjectPreviewProps {
   orientation?: "left" | "center" | "right";
@@ -30,14 +33,25 @@ const ProjectPreview = ({
   image,
   liveLink,
 }: ProjectPreviewProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { projectModalState, action } = useContext(ProjectModalContext);
+  const openModal = () => {
+    action({
+      type: OPEN_MODAL,
+      payload: {
+        heading,
+        techStack,
+        date,
+        infoProject,
+        image,
+        liveLink,
+        isOpen: true,
+      },
+    });
+  };
 
   return (
     <>
-      <ProjectPreviewContainer
-        orientation={orientation}
-        onClick={() => setIsOpen(true)}
-      >
+      <ProjectPreviewContainer orientation={orientation} onClick={openModal}>
         <ProjectPreviewHeading>{heading}</ProjectPreviewHeading>
         <p className="project-preview_text">{children}</p>
         <ParallaxBanner
@@ -52,15 +66,6 @@ const ProjectPreview = ({
         />
         {/* <div className="project-preview_img">{image}</div> */}
       </ProjectPreviewContainer>
-      <ProjectDetail
-        heading={heading}
-        techStack={techStack}
-        infoProject={infoProject}
-        date={date}
-        liveLink={liveLink}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
     </>
   );
 };

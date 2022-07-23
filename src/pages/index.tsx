@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import styled from "styled-components";
 import Theme from "../components/particles/Theme";
@@ -22,8 +22,7 @@ import { DEVICE as device } from "../utils/helpers";
 import { LINKS } from "../utils/contants";
 import { ParallaxBanner } from "react-scroll-parallax";
 import useWindowSize from "../utils/hooks/useWindowSize";
-
-console.log(device);
+import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
@@ -134,6 +133,7 @@ const IndexPage = () => {
 
   return (
     <PageTemplate>
+      <ProjectDetail />
       <HeroContainer scroll={heroScroll}>
         <div className="hero_part hero_part--hidden" />
         <div className="hero_part" />
@@ -164,11 +164,6 @@ const IndexPage = () => {
       </HeroContainer>
       <Container grid={true}>
         <HeadingCode>My self</HeadingCode>
-        {/* <StaticImage
-          src="../assets/coding.jpg"
-          alt="Macbook with open IDE with the lamp"
-          style={{ width: "300px", height: "300px" }}
-        /> */}
         <ParallaxBanner
           layers={[
             {
@@ -209,7 +204,7 @@ const IndexPage = () => {
         <StaticImage
           src="../assets/images/macbook.jpg"
           alt="Macbook w dark background"
-          style={{ width: "100%" }}
+          style={{ width: "100%", maxHeight: "2000px" }}
         />
         <HeadingCode right>work</HeadingCode>
         <h4 className="justify--right">
@@ -228,8 +223,9 @@ const IndexPage = () => {
               liveLink={data.live_link}
               image={
                 <StaticImage
-                  src="../assets/images/pancakes.jpg"
+                  src={"../assets/images/coming-soon.jpg"}
                   alt="Pancakes"
+                  style={{ width: "100%", height: "100%" }}
                 />
               }
             >
@@ -249,7 +245,7 @@ const IndexPage = () => {
             {
               children: (
                 <StaticImage
-                  src="../assets/images/pancakes.jpg"
+                  src="../assets/images/portrait.jpg"
                   alt="Hobby photo"
                   style={{
                     width: "100%",
@@ -267,7 +263,6 @@ const IndexPage = () => {
                 : "1.5/1",
           }}
         />
-
         <h2>
           nolan, <br />
           race sims

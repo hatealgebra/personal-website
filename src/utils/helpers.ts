@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 import Theme from "../components/particles/Theme";
 
 const { mobileL, tablet, laptop, desktop, highRes } = Theme.breakpoints;
