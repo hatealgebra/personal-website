@@ -1,11 +1,4 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { DEVICE } from "../../../utils/helpers";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import useWindowSize from "../../../utils/hooks/useWindowSize";
 import Theme from "../../particles/Theme";
 import { SwitchMenuButton, SwitchMenuContainer } from "./switchMenu.styled";
@@ -27,8 +20,6 @@ const SwitchMenu = ({
   const [infPossibilities, setInfPossibilities] = useState(possibilities);
   const [scrollCount, setScrollCount] = useState(0);
 
-  const switchMenu = document.querySelector(".switch-menu");
-
   /**
    * When menu is in the tablet mode and up, this function scrolls to the element based on the offset from the parent. Also appends element to the end of the array based on the scroll count
    *
@@ -37,6 +28,7 @@ const SwitchMenu = ({
    *
    */
   const scrollTo = (e, menuItem) => {
+    const switchMenu = document.querySelector(".switch-menu");
     dispatch(menuItem);
     if (isTablet) {
       switchMenu && switchMenu.scrollTo(e.target.offsetLeft, 0);

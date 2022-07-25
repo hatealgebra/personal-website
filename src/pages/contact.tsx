@@ -69,7 +69,7 @@ const contact = () => {
           <ContactPageLink href={value}>{socialKeys[i]}</ContactPageLink>
         ))}
       </Container>
-      <ContactFooter>Created with love</ContactFooter>
+      <ContactFooter>Created with Gatsby and a lot of coffee.</ContactFooter>
     </PageTemplate>
   );
 };

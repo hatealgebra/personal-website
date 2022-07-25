@@ -18,6 +18,9 @@ import Theme from "../../particles/Theme";
 
 import copywriteJSON from "../../../assets/content/copyWrite.json";
 
+import { StaticImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+
 const hobbyText = copywriteJSON.pages.about.myHobbies;
 
 const posibilities = Object.keys(hobbyText);
@@ -27,13 +30,28 @@ const MyHobbies = () => {
     useState<"basketball" | "music" | "movies" | "race sims">("basketball");
 
   const windowSize = useWindowSize();
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "3dModels" } }) {
+        edges {
+          node {
+            id
+            publicURL
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
+  const modelArray = data.allFile.edges.map((edge) => edge.node.publicURL);
+  console.log(modelArray);
 
   function Scene() {
-    const basketball = useLoader(GLTFLoader, "/3dModel/basketball.glb");
-    const music = useLoader(GLTFLoader, "/3dModel/headphones.glb");
-    const wheel = useLoader(GLTFLoader, "/3dModel/wheel.glb");
-    const tumbler = useLoader(GLTFLoader, "/3dModel/tumbler.glb");
-
+    const basketball = useLoader(GLTFLoader, modelArray[1]);
+    const music = useLoader(GLTFLoader, modelArray[3]);
+    const wheel = useLoader(GLTFLoader, modelArray[0]);
+    const tumbler = useLoader(GLTFLoader, modelArray[2]);
     return choosenHobbie === "basketball" ? (
       <primitive object={basketball.scene} scale={0.012} />
     ) : choosenHobbie === "music" ? (

@@ -49,6 +49,13 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/assets/images/otherSkills//`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `3dModels`,
+        path: `${__dirname}/src/static/3dModels`,
+      },
+    },
   ],
 };
 
