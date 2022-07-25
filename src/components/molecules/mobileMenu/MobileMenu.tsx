@@ -23,8 +23,6 @@ const MobileMenu = ({ isOpen, close }: MobileMenuprops) => {
   const { pathname } = useLocation();
   const { projectModalState } = useContext(ProjectModalContext);
 
-  console.log(projectModalState);
-
   return (
     <MobileMenuContainer isOpen={isOpen}>
       <MobileMenuTopBar>

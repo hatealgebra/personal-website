@@ -10,6 +10,7 @@ import TopBar from "../components/organisms/topBar/TopBar";
 import Theme from "../components/particles/Theme";
 import PageTemplate from "../components/templates/Page.template";
 import { SOCIALLINKS } from "../utils/contants";
+import useWindowSize from "../utils/hooks/useWindowSize";
 
 const ContactFooter = styled.footer`
   display: flex;
@@ -36,12 +37,13 @@ const Header = styled.div`
 `;
 
 const contact = () => {
+  const windowWidth = useWindowSize().width;
   const socialValues = Object.values(SOCIALLINKS);
   const socialKeys = Object.keys(SOCIALLINKS);
 
   return (
     <PageTemplate woFooter>
-      <TopBar contact />
+      {windowWidth >= Theme.breakpoints.tablet && <TopBar contact />}
       <Header>
         <span>
           Currently Software <br /> Engineer at Diebold Nixdorf

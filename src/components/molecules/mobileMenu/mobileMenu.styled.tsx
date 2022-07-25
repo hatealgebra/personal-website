@@ -5,6 +5,7 @@ import Theme from "../../particles/Theme";
 export const MobileMenuNav = styled.nav`
   display: flex;
   flex-direction: column;
+  gap: 5px;
   a {
     font-size: ${Theme.fontSize["3xl"]};
     text-transform: uppercase;

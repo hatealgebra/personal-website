@@ -11,7 +11,7 @@ export const LinkListContainer = styled.div`
     color: white;
   }
 
-  @media ${DEVICE.tablet} {
+  ${DEVICE.tablet} {
     flex-direction: row;
     flex-wrap: nowrap;
     & > * {
@@ -36,7 +36,7 @@ const contactLinkStyling = css`
   font-weight: ${Theme.typography.semibold};
   text-transform: uppercase;
 
-  @media ${DEVICE.tablet} {
+  ${DEVICE.tablet} {
     font-size: ${Theme.fontSize["3xl"]};
     max-width: 450px;
   }

@@ -20,16 +20,16 @@ html {
 background-color: white;
 
 
-@media only screen and (min-width: 600px){
+ only screen and (min-width: 600px){
     font-size: 90%;
 }
-@media only screen and (min-width: 801px){
+ only screen and (min-width: 801px){
     font-size: 95%;
 }
-@media only screen and (min-width: 1200px){
+ only screen and (min-width: 1200px){
     font-size: 105%;
 }
-@media only screen and (min-width: 1600px){
+ only screen and (min-width: 1600px){
     font-size: 110%;
 }
 
@@ -87,13 +87,13 @@ p{
     line-height: 1.5;
     width: 90%;
 
-    @media ${DEVICE.mobileL}{
+     ${DEVICE.mobileL}{
         max-width: 400px;
     }
-    @media ${DEVICE.tablet}{
+     ${DEVICE.tablet}{
         max-width: 450px;
     }
-    @media ${DEVICE.desktop}{
+     ${DEVICE.desktop}{
         max-width: 500px;
     }
 }
@@ -113,7 +113,7 @@ p{
     left: 45%;
     text-align: right;
 
-    @media ${DEVICE.tablet}{
+     ${DEVICE.tablet}{
         left: 0%;
         right: 0%;
     }

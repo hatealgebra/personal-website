@@ -15,6 +15,7 @@ import Theme from "../particles/Theme";
 
 const PageContainer = styled.main`
   overflow: hidden;
+  background: white;
 `;
 
 interface PageTemplateProps {

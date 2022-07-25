@@ -72,7 +72,9 @@ const SwitchMenu = ({
                 isTablet && i === scrollCount - 1 && "item--dissapear"
               }`}
             >
-              {menuItem}
+              {i === 0 && windowSize.width < Theme.breakpoints.mobileL
+                ? "bball"
+                : menuItem}
             </SwitchMenuButton>
           </li>
         );

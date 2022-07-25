@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useContext } from "react";
+import React, { Dispatch, SetStateAction, useContext, useEffect } from "react";
 
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { LightButton } from "../../atoms/button/button.styled";
 import Link from "../../atoms/link/link.styled";
 import {
@@ -13,6 +13,12 @@ import {
 import ProjectModalContext, {
   CLOSE_MODAL,
 } from "../../../context/ProjectModalContext";
+
+import { graphql, useStaticQuery } from "gatsby";
+import { gatsbyImagesLab } from "../../../utils/helpers/graphql";
+import useWindowSize from "../../../utils/hooks/useWindowSize";
+import Theme from "../../particles/Theme";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 export interface ProjectDetailProps {
   heading: string;
@@ -27,16 +33,36 @@ export interface ProjectDetailProps {
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
-  console.log(projectModalState);
+  const windowSize = useWindowSize();
+  const biggerTablet = windowSize.width >= Theme.breakpoints.tablet;
+
+  const data = gatsbyImagesLab();
+  const modalRef = React.createRef();
+
+  useEffect(() => {
+    if (projectModalState?.isOpen === true) {
+      disableBodyScroll(modalRef.current);
+    } else {
+      enableBodyScroll(modalRef.current);
+    }
+  }, [projectModalState]);
 
   if (projectModalState !== null) {
     const { heading, techStack, infoProject, date, liveLink, isOpen } =
       projectModalState;
 
     return (
-      <ProjectDetailContainer isOpen={isOpen}>
+      <ProjectDetailContainer isOpen={isOpen} ref={modalRef}>
         <ProjectDetailPanel>
-          <span>{heading}</span>
+          <span>Lab project</span>
+          {biggerTablet && (
+            <>
+              <Link white to={liveLink}>
+                Visit live link
+              </Link>
+              <span>{heading}</span>
+            </>
+          )}
           <LightButton
             onClick={() =>
               action({ type: CLOSE_MODAL, payload: { isOpen: false } })
@@ -45,28 +71,46 @@ const ProjectDetail = () => {
             Close
           </LightButton>
         </ProjectDetailPanel>
-        <div style={{ marginTop: "20%" }}>
-          <h4>{infoProject}</h4>
+        <div
+          className="detail-content"
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <ProjectDetailInfoContainer>
             <ProjectDetailInfo>
-              <div className="project-info_item">
-                <h5>Project info</h5>
+              <div>
+                <h3>{infoProject}</h3>
+                {!biggerTablet && (
+                  <Link white to={liveLink}>
+                    Visit live link
+                  </Link>
+                )}
               </div>
-              <div className="project-info_item">
-                <h5>Tech stack</h5>
-                <span>{techStack.map((tech) => `${tech}, `)}</span>
-              </div>
-              <div className="project-info_item">
-                <h5>Date</h5>
-                <span>{date}</span>
-              </div>
-              <div className="project-info_live-link">
-                <Link white to={liveLink}>
-                  Visit live link
-                </Link>
+              <div>
+                <div className="project-info_item">
+                  <h5>Project info</h5>
+                </div>
+                <div className="project-info_item">
+                  <span>Project name</span>
+                  <span>{heading}</span>
+                </div>
+                <div className="project-info_item">
+                  <span>Tech stack</span>
+                  <span>{techStack.map((tech) => `${tech}, `)}</span>
+                </div>
+                <div className="project-info_item">
+                  <span>Date</span>
+                  <span>{date}</span>
+                </div>
               </div>
             </ProjectDetailInfo>
-            <ProjectDetailImages></ProjectDetailImages>
+            <ProjectDetailImages>
+              {data.weatherApp.edges.map(({ node: imageData }) => (
+                <GatsbyImage
+                  image={getImage(imageData.childImageSharp.gatsbyImageData)}
+                  className="project-info__image"
+                />
+              ))}
+            </ProjectDetailImages>
           </ProjectDetailInfoContainer>
         </div>
       </ProjectDetailContainer>

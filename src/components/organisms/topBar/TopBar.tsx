@@ -40,7 +40,6 @@ const TopBar = (props) => {
                     className={link === pathname && "select--underlined"}
                     key={`navlink${i}`}
                   >
-                    {console.log(i)}
                     <NavLink to={link}>
                       {link.replace("/", "")}
                       {i == 2 ? "" : ","}

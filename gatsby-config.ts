@@ -2,8 +2,8 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Pavel Vondra's site`,
+    siteUrl: `https://www.pavel-vondra.com`,
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
@@ -33,6 +33,20 @@ const config: GatsbyConfig = {
       options: {
         name: `projectImages`,
         path: `${__dirname}/src/assets/images/projects/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `technologyStack`,
+        path: `${__dirname}/src/assets/images/technologyStack//`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `otherSkills`,
+        path: `${__dirname}/src/assets/images/otherSkills//`,
       },
     },
   ],

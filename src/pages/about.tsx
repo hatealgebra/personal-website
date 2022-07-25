@@ -30,16 +30,16 @@ const GreetingContainer = styled.div`
   max-width: 800px;
   background-color: white;
 
-  @media ${DEVICE.laptop} {
+  ${DEVICE.laptop} {
     max-width: 1000px;
   }
 
   h1 {
     max-width: 400px;
-    @media ${DEVICE.mobileL} {
+    ${DEVICE.mobileL} {
       margin-left: 5%;
     }
-    @media ${DEVICE.tablet} {
+    ${DEVICE.tablet} {
       margin-left: 12%;
     }
   }
@@ -50,28 +50,26 @@ const GreetingContainer = styled.div`
     right: 0;
     max-width: 400px;
 
-    @media (min-width: 600px) {
+    (min-width: 600px) {
       width: 60%;
     }
   }
 
-  @media ${DEVICE.tablet} {
+  ${DEVICE.tablet} {
     padding: 5% 0 0 0;
   }
 `;
 
 // TODO copywriting man
 
-const aboutContent = copyWriteJSON.pages.about;
+const { aboutMe, myHobbies } = copyWriteJSON.pages.about;
 
 const about = () => {
   const windowSize = useWindowSize();
 
   const data = useStaticQuery(graphql`
     query images {
-      techStackImages: allFile(
-        filter: { dir: { regex: "/Technology stack/i" } }
-      ) {
+      techStackImages: allFile(filter: { dir: { regex: "/technology/gi" } }) {
         nodes {
           childImageSharp {
             gatsbyImageData
@@ -102,7 +100,7 @@ const about = () => {
         />
       </GreetingContainer>
       <Container background="black">
-        {aboutContent.aboutMe.introduction.map((eachSection: any) => (
+        {aboutMe.introduction.map((eachSection: any) => (
           <>
             <h2 style={{ marginTop: "30px" }} className="text--center">
               {eachSection.heading}
@@ -145,11 +143,7 @@ const about = () => {
             name="Projects
           "
           >
-            <p>
-              Sadly I dont't have currently any real-world application that is
-              normally use, just learning and creating "lab" projects to
-              showcase my work.
-            </p>
+            <p>{aboutMe.projects}</p>
           </ExpandItem>
         </ExpandMenu>
       </Container>

@@ -23,11 +23,15 @@ const ContainerStyled = styled.section<ContainerProps>`
       padding: 50px 2.5% 70px 2.5%;
       max-width: 500px;
 
-      @media ${DEVICE.tablet} {
+      a {
+        margin-top: 10px;
+      }
+
+      ${DEVICE.tablet} {
         max-width: 600px;
       }
 
-      @media ${DEVICE.laptop} {
+      ${DEVICE.laptop} {
         max-width: 1200px;
         ${({ grid }) =>
           grid &&
@@ -35,9 +39,13 @@ const ContainerStyled = styled.section<ContainerProps>`
         display: grid;
         column-gap: 20px;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr ;
         div:nth-of-type(2) {
           grid-column: 2/3;
           grid-row: 1 / span 3;
+        }
+        a{
+          margin-top: 50px;
         }
         `}
       }
@@ -52,7 +60,7 @@ const ContainerStyled = styled.section<ContainerProps>`
       }
       h4 {
         width: 50%;
-        @media ${DEVICE.tablet} {
+        ${DEVICE.tablet} {
           width: 100%;
         }
       }

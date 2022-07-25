@@ -1,9 +1,23 @@
 {
   "pages": {
     "homepage": {
+      "heroSection": {
+        "text": [
+          "This is my webpage, where I showcase ",
+          "myself and the work that is behind me. Enjoy!"
+        ]
+      },
+      "myselfSection": {
+        "heading": "My self",
+        "subheading": ["an", "aspiring", "front-end developer."],
+        "text": [
+          "Felt in love with web development. I love when nice things are functional and helpful. Trying to become a good developer step by step. Learning new things, meeting new people, apprehending new pieces of information, till my brain can’t go further.",
+          "In the meantime, I’m a cat dad that plays basketball in Germany. Also, I’m searching for new sneakers, enjoy car sims, listen to music, or read Batman comics."
+        ]
+      },
       "sectionWMyPhoto": {
         "heading": ["Bball,", "nolan,", "race sims"],
-        "text": "Little about me. I do like to play basketball, so I can eat more cookies and oreo. Whatever movie that Christopher Nolan makes, it's must see. And if I'm not doing any of the two activies that I've mention before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
+        "text": "Little about me. I do like to play basketball, so I can eat more cookies and roe, Whatever movie that Christopher Nolan makes, it’s a must-see. And if I’m not doing any of the two activities that I’ve mentioned before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
       }
     },
     "work": {
@@ -16,18 +30,25 @@
           {
             "heading": "Software engineer",
             "text": [
-              "I’m currently working as fresh software engineer in  maintenance and support for big coporation that makes banking solutions across the world.",
-              "Learning front end development by myself almost 2 years. I have experience in industry as IT-Administrator. Currently looking for extra part-time job, in best case scenario full remote."
+              "I’m currently working as a fresh software engineer in maintenance and support for a big corporation that makes banking solutions across the world.",
+              "Learning front-end development by myself almost for 2 years. I also have experience in the industry as IT Administrator. Currently looking for an extra part-time job, in best case scenario full remote."
             ]
           },
           {
             "heading": "My Aim",
             "text": [
-              "… is to write quality code that is functional, testable and sustainable. I’m on the start to become good developer and I’m open to new things and opportunities that can benefit me and others along the way.",
-              "Also I make some basic designing/prototyping as something that comes handy, because on some of the projects I’ve done everything by myself.  Check down below what tech stack I use and other skills."
+              "… is to write quality code that is functional, testable, and sustainable. I’m at the start to become a good developer and I’m open to new things and opportunities that can benefit me and the others along the way.",
+              "Also, I make some basic designing/prototyping as something that comes in handy, because on some of the projects I’ve done everything by myself. Check down below that tech stack I use and other skills."
             ]
           }
-        ]
+        ],
+        "projects": "Sadly I don’t have currently any real-work application that is normally used, just learning and creating “lab” projects to showcase my work."
+      },
+      "myHobbies": {
+        "basketball": "One of my favorite hobbies to do, because it balances my life with the IT world. Currently, I’m playing for ASV Cham in Bavaria, Germany. Also, I like to watch from time to time some NBA games when there are some on schedule.",
+        "movies": "When I want to completely switch off and just chill, I do like to play some movies rather than tv shows. One of my fav movies is 500 days of summer and everything that has a fingerprint by Christopher Nolan.",
+        "race sims": "Another thing that allows me to get my happy hour of freedom is the racing sim. I love to play F1, Forma with the open world, or some of the serious Racing, that has an awesome community.",
+        "music": "I do not have a lot of addictions, but music is one of them. From rap, hip-hop through rock, and indie to electronic music like Swimming. I do listen to every genre almost possible. Mainly when working because it helps me to focus on the task."
       }
     }
   },
@@ -37,7 +58,7 @@
   },
   "footer": {
     "heading": ["Reach", "me out"],
-    "headingText": "You can contact me either via social links down below or write me eail via form. Looking forward to hear from you",
+    "text": "You can contact me either via the social links down below or write me an email via email link. Looking forward to hearing from you.",
     "email": "HELLO@PAVEL-VONDRA.COM"
   }
 }

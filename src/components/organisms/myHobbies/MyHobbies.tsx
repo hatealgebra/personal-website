@@ -16,18 +16,11 @@ import { GLTFLoader } from "three-stdlib";
 import useWindowSize from "../../../utils/hooks/useWindowSize";
 import Theme from "../../particles/Theme";
 
-const hobbyText = {
-  basketball:
-    "One of my favourite hobbies to do, because it balances my life with IT world. Currently I’m playing for ASV Cham in Bavaria, Germany. Also I like to watch from time to time some NBA games when there are some on schedule.",
-  music:
-    "I do not have a lot of addictions, but music is one of them. From rap, hip-hop through rock, indie to electronic music like Stimming. I do listen to every genre almost possible. Mainly when working cause it helpes me to focus on the task.",
-  movies:
-    "When I want to completely switch off and just chill, I do like to play some movies rather than tv shows. One of my fav movies are 500 days of summer and everything that has fingerprint from Christopher Nolan",
-  "race sims":
-    "Other thing that allows me to get my happy hour of freedom is racing sim. I love to play F1, Forza with open world or some of the serious IRacing, that has awesome community.",
-};
+import copywriteJSON from "../../../assets/content/copyWrite.json";
 
-const posibilities = ["basketball", "movies", "race sims", "music"];
+const hobbyText = copywriteJSON.pages.about.myHobbies;
+
+const posibilities = Object.keys(hobbyText);
 
 const MyHobbies = () => {
   const [choosenHobbie, setChoosenHobbie] =

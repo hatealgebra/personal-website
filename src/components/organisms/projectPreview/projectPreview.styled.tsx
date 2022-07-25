@@ -27,7 +27,7 @@ export const ProjectPreviewContainer = styled.div<{
     }
   }
 
-  @media ${DEVICE.laptop} {
+  ${DEVICE.laptop} {
     display: grid;
     align-items: flex-start;
     grid-template-columns: auto 1fr;

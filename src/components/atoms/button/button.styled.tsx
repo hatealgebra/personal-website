@@ -26,6 +26,7 @@ export const ButtonLink = styled(NavLink).attrs((props) => ({
   background: none;
 `;
 
+// fixme font size of the link button
 export const LightButton = styled.button`
   ${baseStyling}
   background: none;

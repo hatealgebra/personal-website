@@ -24,7 +24,7 @@ export const HobbyContent = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${DEVICE.tablet} {
+  ${DEVICE.tablet} {
     max-width: 1800px;
     margin: auto;
     flex-direction: row-reverse;
@@ -39,7 +39,7 @@ export const HobbyContent = styled.div`
 
 export const MyHobbiesContainer = styled.div`
   background-color: white;
-  @media ${DEVICE.tablet} {
+  ${DEVICE.tablet} {
     padding: 10% 0;
   }
 `;

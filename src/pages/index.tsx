@@ -9,13 +9,14 @@ import Container from "../components/molecules/container/Container";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 import { FaCode } from "@react-icons/all-files/fa/FaCode";
 
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import Link from "../components/atoms/link/link.styled";
 import ProjectPreview from "../components/organisms/projectPreview/ProjectPreview";
 import Button from "../components/atoms/button/button.styled";
 import PageTemplate from "../components/templates/Page.template";
 
 import LabDataJSON from "../assets/content/labData.json";
+import CopyWriteJSON from "../assets/content/copyWrite.json";
 
 import { Fade } from "react-awesome-reveal";
 import { DEVICE as device } from "../utils/helpers";
@@ -23,6 +24,9 @@ import { LINKS } from "../utils/contants";
 import { ParallaxBanner } from "react-scroll-parallax";
 import useWindowSize from "../utils/hooks/useWindowSize";
 import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
+import { graphql, useStaticQuery } from "gatsby";
+
+// todo make 404 page
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
@@ -32,12 +36,12 @@ const HelloThereHero = styled.div`
   width: 70%;
   max-width: 350px;
 
-  @media ${device.mobileL} {
+  ${device.mobileL} {
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  @media ${device.laptop} {
+  ${device.laptop} {
     max-width: 500px;
   }
 
@@ -120,10 +124,48 @@ const HeroContainer = styled.div<HeroContainerProps>`
   }
 `;
 
+const { heroSection, myselfSection, sectionMyPhoto } =
+  CopyWriteJSON.pages.homepage;
+
 const IndexPage = () => {
   const [heroScroll, setHeroScroll] = useState<boolean>(false);
+  const homepageContent = CopyWriteJSON.pages.homepage;
 
   const windowSize = useWindowSize();
+
+  const data = useStaticQuery(graphql`
+    query {
+      weatherApp: allFile(filter: { relativeDirectory: { eq: "weatherApp" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      foodMood: allFile(filter: { relativeDirectory: { eq: "foodMood" } }) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const images = [
+    getImage(data.foodMood.edges[0].node.childImageSharp),
+    getImage(data.weatherApp.edges[0].node.childImageSharp),
+  ];
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
@@ -149,10 +191,8 @@ const IndexPage = () => {
                 Hello there
               </span>
               <h4>
-                This is my webpage, where I showcase
-                <div style={{ color: "white" }}>
-                  myself and work that is behind me. Enjoy!
-                </div>
+                {heroSection.text[0]}
+                <div style={{ color: "white" }}>{heroSection.text[1]}</div>
               </h4>
             </Fade>
           )}
@@ -163,7 +203,7 @@ const IndexPage = () => {
         </ScrollLabel>
       </HeroContainer>
       <Container grid={true}>
-        <HeadingCode>My self</HeadingCode>
+        <HeadingCode>{myselfSection.heading}</HeadingCode>
         <ParallaxBanner
           layers={[
             {
@@ -171,7 +211,6 @@ const IndexPage = () => {
                 <StaticImage
                   src="../assets/images/coding.jpg"
                   alt="Macbook with open IDE with the lamp"
-                  objectPosition="bottom"
                   style={{ height: "100%", width: "100%" }}
                 />
               ),
@@ -181,30 +220,22 @@ const IndexPage = () => {
           style={{ aspectRatio: "1/1" }}
         />
         <h4>
-          An
-          <span className="libre"> aspiring </span>
-          front-end developer.
+          {myselfSection.subheading[0]}
+          <span className="libre"> {myselfSection.subheading[1]} </span>
+          {myselfSection.subheading[2]}
         </h4>
         <div>
-          <p>
-            Felt in love with web development. I love when nice things are
-            functional and helpful. Trying to become good developer step by tep.
-            Learning new things, meeting new people, apprehending new
-            informations, till my brain(emoticon) can’t go further.{" "}
-          </p>
-          <p>
-            In meantime I’m cat dad that plays basketball in Germany. Also I’m
-            searching for new sneakers, enjoy car sims, listen to music or read
-            Batman comics.
-          </p>
+          {myselfSection.text.map((paragraph: string) => (
+            <p>{paragraph}</p>
+          ))}
+          <Link to={LINKS.about}>What I can do</Link>
         </div>
-        <Link>What I can do</Link>
       </Container>
       <Container variant="projects" background="black">
         <StaticImage
           src="../assets/images/macbook.jpg"
           alt="Macbook w dark background"
-          style={{ width: "100%", maxHeight: "2000px" }}
+          style={{ width: "100%", maxHeight: "1500px" }}
         />
         <HeadingCode right>work</HeadingCode>
         <h4 className="justify--right">
@@ -222,8 +253,8 @@ const IndexPage = () => {
               date={data.date}
               liveLink={data.live_link}
               image={
-                <StaticImage
-                  src={"../assets/images/coming-soon.jpg"}
+                <GatsbyImage
+                  image={images[index]}
                   alt="Pancakes"
                   style={{ width: "100%", height: "100%" }}
                 />
@@ -238,7 +269,7 @@ const IndexPage = () => {
         </div>
       </Container>
       <Container>
-        <h2>Bball,</h2>
+        <h2>{homepageContent.sectionWMyPhoto.heading[0]}</h2>
         <ParallaxBanner
           className="hobby-preview-img"
           layers={[
@@ -264,15 +295,10 @@ const IndexPage = () => {
           }}
         />
         <h2>
-          nolan, <br />
-          race sims
+          {homepageContent.sectionWMyPhoto.heading[1]} <br />
+          {homepageContent.sectionWMyPhoto.heading[2]}
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi iste
-          ex quibusdam eaque voluptate dolore aut sequi harum deleniti aliquid
-          beatae veritatis explicabo id unde culpa, adipisci incidunt dolorum
-          autem!
-        </p>
+        <p>{homepageContent.sectionWMyPhoto.text}</p>
         <Link to={LINKS.about}>More about me</Link>
       </Container>
     </PageTemplate>
