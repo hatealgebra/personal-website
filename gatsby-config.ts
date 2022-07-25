@@ -28,13 +28,7 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/assets/images/lab/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projectImages`,
-        path: `${__dirname}/src/assets/images/projects/`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
