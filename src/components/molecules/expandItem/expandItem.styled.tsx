@@ -63,7 +63,7 @@ export const ExpandItemContainer = styled.div<{
   borders: "both" | "up" | "down";
   color: "white" | "black";
 }>`
-  overflow-y: hidden;
+  overflow: hidden;
   padding: 25px 10px;
   border-top: ${({ borders, color }) =>
     (borders === "down" && "none") || `1px solid ${color}`};

@@ -13,6 +13,11 @@ export const SOCIALLINKS = {
   github: "https://github.com/hatealgebra",
 };
 
+export const EXTERNALLINKS = {
+  weatherApp: "https://weather-application-pv.netlify.app",
+  foodMood: "https://food-mood-pv.netlify.app",
+};
+
 export const BREAKPOINTS = {
   mobileL: 500,
   tablet: 786,

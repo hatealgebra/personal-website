@@ -24,7 +24,7 @@ import { LINKS } from "../utils/contants";
 import { ParallaxBanner } from "react-scroll-parallax";
 import useWindowSize from "../utils/hooks/useWindowSize";
 import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
-import { graphql, useStaticQuery } from "gatsby";
+import { gatsbyImageslabPreview } from "../utils/helpers/graphql";
 
 // todo make 404 page
 
@@ -133,39 +133,7 @@ const IndexPage = () => {
 
   const windowSize = useWindowSize();
 
-  const data = useStaticQuery(graphql`
-    query {
-      weatherApp: allFile(filter: { relativeDirectory: { eq: "weatherApp" } }) {
-        edges {
-          node {
-            absolutePath
-            sourceInstanceName
-            relativeDirectory
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-      foodMood: allFile(filter: { relativeDirectory: { eq: "foodMood" } }) {
-        edges {
-          node {
-            absolutePath
-            sourceInstanceName
-            relativeDirectory
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const images = [
-    getImage(data.foodMood.edges[0].node.childImageSharp),
-    getImage(data.weatherApp.edges[0].node.childImageSharp),
-  ];
+  const imagesPreview = gatsbyImageslabPreview();
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
@@ -243,18 +211,18 @@ const IndexPage = () => {
           <span className="libre"> some of </span>
           my projects.
         </h4>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column-reverse" }}>
           {LabDataJSON.lab.map((data, index) => (
             <ProjectPreview
               key={data.name + index}
               heading={data.name}
               techStack={data.tech_stack}
-              infoProject="Lorem ipsum lorem ipsum"
+              infoProject={data.info_project}
               date={data.date}
               liveLink={data.live_link}
               image={
                 <GatsbyImage
-                  image={images[index]}
+                  image={imagesPreview[index]}
                   alt="Pancakes"
                   style={{ width: "100%", height: "100%" }}
                 />

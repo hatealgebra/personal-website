@@ -6,45 +6,14 @@ import copyWriteJSON from "../../../assets/content/copyWrite.json";
 import ProjectPreview from "../projectPreview/ProjectPreview";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import { gatsbyImageslabPreview } from "../../../utils/helpers/graphql";
 
 const { work: workContent } = copyWriteJSON.pages;
 
 const WorkShowcase = () => {
   const [typeOfWork, setTypeOfWork] = useState<"projects" | "lab">("lab");
 
-  const data = useStaticQuery(graphql`
-    query {
-      weatherApp: allFile(filter: { relativeDirectory: { eq: "weatherApp" } }) {
-        edges {
-          node {
-            absolutePath
-            sourceInstanceName
-            relativeDirectory
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-      foodMood: allFile(filter: { relativeDirectory: { eq: "foodMood" } }) {
-        edges {
-          node {
-            absolutePath
-            sourceInstanceName
-            relativeDirectory
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const images = [
-    getImage(data.foodMood.edges[0].node.childImageSharp),
-    getImage(data.weatherApp.edges[0].node.childImageSharp),
-  ];
+  const imagesPreview = gatsbyImageslabPreview();
 
   return (
     <Container noAnimation>
@@ -54,29 +23,31 @@ const WorkShowcase = () => {
         possibilities={["projects", "lab"]}
       />
       <p>{workContent.labText}</p>
-      {typeOfWork === "projects" ? (
-        <h3>No Projects here :(</h3>
-      ) : (
-        LabDataJSON.lab.map((data, index) => (
-          <ProjectPreview
-            key={data.name + index}
-            heading={data.name}
-            techStack={data.tech_stack}
-            infoProject="Lorem ipsum lorem ipsum"
-            date={data.date}
-            liveLink={data.live_link}
-            image={
-              <GatsbyImage
-                image={images[index]}
-                alt="coming soon"
-                style={{ height: "100%", width: "100%" }}
-              />
-            }
-          >
-            {data.preview_text}
-          </ProjectPreview>
-        ))
-      )}
+      <div style={{ display: "flex", flexDirection: "column-reverse" }}>
+        {typeOfWork === "projects" ? (
+          <h3>No Projects here :(</h3>
+        ) : (
+          LabDataJSON.lab.map((data, index) => (
+            <ProjectPreview
+              key={data.name + index}
+              heading={data.name}
+              techStack={data.tech_stack}
+              infoProject={data.info_project}
+              date={data.date}
+              liveLink={data.live_link}
+              image={
+                <GatsbyImage
+                  image={imagesPreview[index]}
+                  alt="Pancakes"
+                  style={{ width: "100%", height: "100%" }}
+                />
+              }
+            >
+              {data.preview_text}
+            </ProjectPreview>
+          ))
+        )}
+      </div>
     </Container>
   );
 };

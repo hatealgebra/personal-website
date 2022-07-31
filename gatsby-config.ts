@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Pavel Vondra's site`,
+    title: `Personal website`,
     siteUrl: `https://www.pavel-vondra.com`,
   },
   plugins: [
@@ -14,6 +14,10 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     `gatsby-plugin-transition-link`,
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: { icon: "src/assets/images/favicon.png" },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

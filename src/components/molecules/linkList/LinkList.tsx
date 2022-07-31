@@ -1,26 +1,33 @@
 import React from "react";
-import { PageLink } from "../../atoms/link/link.styled";
+import Link, { PageLink } from "../../atoms/link/link.styled";
 import HeadingCode from "../headingCode/HeadingCode";
 import { LinkListStyled } from "./linkList.styled";
 
-type LinkListProps = {
-  heading: string;
-  linkData: string[];
-};
-
-const LinkList = ({ heading, linkData }: LinkListProps) => {
+const LinkList = ({ heading, linkData, isExternal }: LinkListProps) => {
   return (
     <LinkListStyled>
       <dt className="link-list_heading">
         <HeadingCode linkHeading>{heading}</HeadingCode>
       </dt>
-      {linkData.map((link) => (
-        <dd key={`link-${link}`} className="link-list_item">
-          <PageLink to={link}>{link.replace("/", "")}</PageLink>
+      {linkData.map((child) => (
+        <dd key={`link-${child.name}`} className="link-list_item">
+          {isExternal ? (
+            <PageLink to={child.link} target="_blank">
+              {child.name}
+            </PageLink>
+          ) : (
+            <PageLink to={child.link}>{child.name}</PageLink>
+          )}
         </dd>
       ))}
     </LinkListStyled>
   );
 };
+
+interface LinkListProps {
+  heading: string;
+  linkData: { name: string; link: string }[];
+  isExternal?: boolean;
+}
 
 export default LinkList;

@@ -13,7 +13,7 @@ import { GrGithub } from "@react-icons/all-files/gr/GrGithub";
 import LinkList from "../../molecules/linkList/LinkList";
 import Link from "../../atoms/link/link.styled";
 import Theme from "../../particles/Theme";
-import { LINKS } from "../../../utils/contants";
+import { EXTERNALLINKS, LINKS } from "../../../utils/contants";
 
 import copyWriteJSON from "../../../assets/content/copyWrite.json";
 
@@ -35,26 +35,38 @@ const Footer = ({}: FooterProps) => {
           </h3>
           <p>{footerContent.headingText}</p>
         </div>
-        <Email>Hello@pavel-vondra.com</Email>
+        <Email>{footerContent.email}</Email>
         <SocialIcons>
-          <Link to="https://www.instagram.com/hatealgebra/">
+          <Link target="_blank" to="https://www.instagram.com/hatealgebra/">
             <GrInstagram color={Theme.color.gold} fontSize="1.7em" />
           </Link>
-          <Link to="https://www.linkedin.com/in/pavel-vondra-603012201/">
+          <Link
+            target="_blank"
+            to="https://www.linkedin.com/in/pavel-vondra-603012201/"
+          >
             <GrLinkedin color={Theme.color.gold} fontSize="1.7em" />
           </Link>
-          <Link to="https://github.com/hatealgebra">
+          <Link target="_blank" to="https://github.com/hatealgebra">
             <GrGithub color={Theme.color.gold} fontSize="1.7em" />
           </Link>
         </SocialIcons>
         <LinkListContainer>
           <LinkList
             heading="Pages"
-            linkData={[homepage, work, about, contact]}
+            linkData={[
+              { name: "Homepage", link: homepage },
+              { name: "About", link: about },
+              { name: "Work", link: work },
+              { name: "Contact", link: contact },
+            ]}
           />
           <LinkList
+            isExternal
             heading="Projects"
-            linkData={["weather app", "food mood"]}
+            linkData={[
+              { name: "Weather App", link: EXTERNALLINKS.weatherApp },
+              { name: "Food Mood", link: EXTERNALLINKS.foodMood },
+            ]}
           />
         </LinkListContainer>
       </FooterStyled>

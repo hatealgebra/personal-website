@@ -17,7 +17,7 @@
       },
       "sectionWMyPhoto": {
         "heading": ["Bball,", "nolan,", "race sims"],
-        "text": "Little about me. I do like to play basketball, so I can eat more cookies and roe, Whatever movie that Christopher Nolan makes, it’s a must-see. And if I’m not doing any of the two activities that I’ve mentioned before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
+        "text": "Little about me. I do like to play basketball, so I can eat more cookies and oreo, Whatever movie that Christopher Nolan makes, it’s a must-see. And if I’m not doing any of the two activities that I’ve mentioned before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
       }
     },
     "work": {
@@ -58,7 +58,7 @@
   },
   "footer": {
     "heading": ["Reach", "me out"],
-    "text": "You can contact me either via the social links down below or write me an email via email link. Looking forward to hearing from you.",
-    "email": "HELLO@PAVEL-VONDRA.COM"
+    "headingText": "You can contact me either via the social links down below or write me an email via email link. Looking forward to hearing from you.",
+    "email": "EMAIL@PAVEL-VONDRA.COM"
   }
 }

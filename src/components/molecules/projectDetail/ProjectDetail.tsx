@@ -30,6 +30,7 @@ export interface ProjectDetailProps {
   setIsOpen: Dispatch<SetStateAction<any>>;
 }
 
+// fixme doesnt show full image, it just goes out of the way
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
@@ -50,6 +51,12 @@ const ProjectDetail = () => {
   if (projectModalState !== null) {
     const { heading, techStack, infoProject, date, liveLink, isOpen } =
       projectModalState;
+
+    const nameOfProject = heading.replace(" ", "");
+    console.log(nameOfProject);
+
+    const imagesData = data[nameOfProject];
+    console.log(imagesData);
 
     return (
       <ProjectDetailContainer isOpen={isOpen} ref={modalRef}>
@@ -78,7 +85,7 @@ const ProjectDetail = () => {
           <ProjectDetailInfoContainer>
             <ProjectDetailInfo>
               <div>
-                <h3>{infoProject}</h3>
+                <h4>{infoProject}</h4>
                 {!biggerTablet && (
                   <Link white to={liveLink}>
                     Visit live link
@@ -104,12 +111,17 @@ const ProjectDetail = () => {
               </div>
             </ProjectDetailInfo>
             <ProjectDetailImages>
-              {data.weatherApp.edges.map(({ node: imageData }) => (
-                <GatsbyImage
-                  image={getImage(imageData.childImageSharp.gatsbyImageData)}
-                  className="project-info__image"
-                />
-              ))}
+              {imagesData.edges
+                .filter((node, i) => i > 0)
+                .map(({ node: imageData }) => (
+                  <GatsbyImage
+                    image={getImage(imageData.childImageSharp.gatsbyImageData)}
+                    className="project-info__image"
+                    objectFit="contain"
+                    objectPosition="left"
+                    loading="eager"
+                  />
+                ))}
             </ProjectDetailImages>
           </ProjectDetailInfoContainer>
         </div>

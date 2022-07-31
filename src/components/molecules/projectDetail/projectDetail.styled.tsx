@@ -8,20 +8,21 @@ export const ProjectDetailImages = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 30px;
 
   img {
-    width: 100%;
     height: 100%;
   }
 
   .project-info__image {
     width: 100%;
+    height: fit-content;
     height: auto;
-    height: 400px;
   }
 
   ${DEVICE.tablet} {
-    padding: 0 5%;
+    margin-top: 0px;
+    margin-left: 50px;
     grid-row: 1/3;
     grid-column: 2/3;
     flex-direction: row;
@@ -46,15 +47,16 @@ export const ProjectDetailInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 400px;
+  min-height: 450px;
   width: fit-content;
-
+  max-width: 500px;
   .project-info {
     &_item {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0px;
-      h5 {
+      padding: 15px 0px;
+      max-width: 300px;
+      s h5 {
         text-transform: uppercase;
       }
       span {
@@ -74,8 +76,8 @@ export const ProjectDetailInfo = styled.div`
   }
 
   ${DEVICE.tablet} {
-    min-width: 400px;
-    max-width: 600px;
+    min-height: auto;
+    width: 300px;
   }
 `;
 
@@ -90,8 +92,7 @@ export const ProjectDetailInfoContainer = styled.section`
     min-height: 500px;
     width: fit-content;
     h4 {
-      margin-bottom: 50px;
-      min-width: 400px;
+      margin-bottom: 50px;s
     }
   }
 `;

@@ -30,7 +30,7 @@ export const ProjectPreviewContainer = styled.div<{
   ${DEVICE.laptop} {
     display: grid;
     align-items: flex-start;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     .project-preview {
       &_img {
         grid-row: 1/10;
