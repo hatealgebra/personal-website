@@ -26,7 +26,7 @@ import useWindowSize from "../utils/hooks/useWindowSize";
 import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
 import { gatsbyImageslabPreview } from "../utils/helpers/graphql";
 
-// todo make 404 page
+//  TODO README
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
@@ -231,10 +231,14 @@ const IndexPage = () => {
               {data.preview_text}
             </ProjectPreview>
           ))}
-          <Link style={{ alignSelf: "center" }} white to={LINKS.work}>
-            Show All
-          </Link>
         </div>
+        <Link
+          style={{ position: "relative", left: "40%" }}
+          white
+          to={LINKS.work}
+        >
+          Show All
+        </Link>
       </Container>
       <Container>
         <h2>{homepageContent.sectionWMyPhoto.heading[0]}</h2>

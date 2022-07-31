@@ -4,9 +4,10 @@ import SwitchMenu from "../../molecules/switchMenu/SwitchMenu";
 import LabDataJSON from "../../../assets/content/labData.json";
 import copyWriteJSON from "../../../assets/content/copyWrite.json";
 import ProjectPreview from "../projectPreview/ProjectPreview";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { gatsbyImageslabPreview } from "../../../utils/helpers/graphql";
+
+// TODO add see more to the images
 
 const { work: workContent } = copyWriteJSON.pages;
 

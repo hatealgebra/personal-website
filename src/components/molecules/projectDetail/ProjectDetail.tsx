@@ -53,10 +53,8 @@ const ProjectDetail = () => {
       projectModalState;
 
     const nameOfProject = heading.replace(" ", "");
-    console.log(nameOfProject);
 
     const imagesData = data[nameOfProject];
-    console.log(imagesData);
 
     return (
       <ProjectDetailContainer isOpen={isOpen} ref={modalRef}>
@@ -64,7 +62,7 @@ const ProjectDetail = () => {
           <span>Lab project</span>
           {biggerTablet && (
             <>
-              <Link white to={liveLink}>
+              <Link white to={liveLink} target="_blank">
                 Visit live link
               </Link>
               <span>{heading}</span>

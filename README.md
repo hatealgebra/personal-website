@@ -1,54 +1,20 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+<p  align="center"><a  href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+<img  alt="Gatsby"  src="https://www.gatsbyjs.com/Gatsby-Monogram.svg"  width="60"  /></a></p>
 
-## 🚀 Quick start
+<h1  align="center">My personal website</h1>
 
-1.  **Create a Gatsby site.**
+## 🚀 Project description
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+**Motivation**
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+This my website was created so I can show me and my skills to the world. It represents myself in digital world. Here you can get me to know, what are my hobbies and what I'm trying to achieve. Also there is collection of my projects, right now more oriented to "lab" where I'm trying to build some real world scenario apps. Enjoy!.
 
-2.  **Start developing.**
+**Technology used**
 
-    Navigate into your new site’s directory and start it up.
+Website was created with typescrip gatsby template with the help of the styled-components, storybook and few npm packages. It hosted on netlify with custom domain.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+**Content**
 
-3.  **Open the code and start customizing!**
+In this website you can found few static pages like homepage, about me, work or contact page. You read information about me, what technology stack I'm using and trying to learn. See some cool 3d models which represents my hobbies and finally projects that I'm making right now. Also bunch of links for my social media.
 
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+<a href="https://pavel-vondra.com">Live version</a>
