@@ -1,7 +1,15 @@
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Preloader from "./src/components/particles/Preloader";
+import { ThemeProvider } from "styled-components";
+
+import theme from "./src/components/particles/Theme";
+import GlobalStyle from "./src/globalStyle";
 
 export const wrapRootElement = ({ element }, props) => {
-  return <ParallaxProvider {...props}>{element}</ParallaxProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <ParallaxProvider {...props}>{element}</ParallaxProvider>
+    </ThemeProvider>
+  );
 };
