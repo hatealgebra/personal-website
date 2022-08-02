@@ -4,7 +4,7 @@
       "name": "Food Mood",
       "date": "2022",
       "tech_stack": ["TypeScript", "CSS", "HTML", "Styled Components"],
-      "live_link": "https://www.weather-application-pv.netlify.app",
+      "live_link": "https://food-mood-pv.netlify.app",
       "preview_text": "Healthy recipes with own account.",
       "info_project": "Web app where users can search, save and set their own meal plan. Its goal is to get healthy and interesting recipes.",
       "images": "../assets/images/pancakes.jpg"
@@ -13,7 +13,7 @@
       "name": "Weather App",
       "date": "2022",
       "tech_stack": ["TypeScript", "CSS", "HTML", "Styled Components"],
-      "live_link": "https://www.food-mood-pv.netlify.app",
+      "live_link": "https://weather-application-pv.netlify.app",
       "preview_text": "Weather application, that shows weather and some tourist attractions.",
       "info_project": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
       "images": "../assets/images/weather-preview.jpg"

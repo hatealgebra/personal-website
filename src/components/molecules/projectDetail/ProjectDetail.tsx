@@ -30,7 +30,7 @@ export interface ProjectDetailProps {
   setIsOpen: Dispatch<SetStateAction<any>>;
 }
 
-// fixme doesnt show full image, it just goes out of the way
+// FIXME doesnt show full image, it just goes out of the way
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
