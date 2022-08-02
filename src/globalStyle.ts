@@ -1,16 +1,30 @@
+import "@fontsource/work-sans/900.css";
+import "@fontsource/work-sans/900.css";
+import "@fontsource/work-sans/800.css";
+import "@fontsource/work-sans/700.css";
+import "@fontsource/work-sans/600.css";
+import "@fontsource/work-sans/500.css";
+import "@fontsource/work-sans/400.css";
+import "@fontsource/work-sans/300.css";
+
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/300.css";
 import { createGlobalStyle } from "styled-components";
+
 import Theme from "./components/particles/Theme";
 
 import theme from "./components/particles/Theme";
 import { DEVICE } from "./utils/helpers";
+
+// FIXME more elegant font import
 
 const GlobalStyle = createGlobalStyle`
 
 * {
     margin:0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     box-sizing: inherit;
 }
 
@@ -37,12 +51,15 @@ background-color: white;
 body{
     height: 100%;
     width: 100%;
-    font-family: "Work Sans", sans-serif;
+    font-family: "Work Sans";
     line-height: 1.3;
     font-weight: 400;
     color: ${theme.color.black};
     overflow-x: hidden;
 background-color: white;
+-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 button, p {
@@ -66,6 +83,7 @@ h2{
     font-weight: ${theme.typography.extrabold};
     text-transform: uppercase;
     letter-spacing: 2px;
+
 }
 h3{
     font-size: ${theme.fontSize["2xl"]};

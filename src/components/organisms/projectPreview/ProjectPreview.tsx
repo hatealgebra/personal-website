@@ -4,9 +4,7 @@ import {
   ProjectPreviewHeading,
 } from "./projectPreview.styled";
 
-import ProjectDetail from "../../molecules/projectDetail/ProjectDetail";
 import { ParallaxBanner } from "react-scroll-parallax";
-import { StaticImage } from "gatsby-plugin-image";
 import { IStaticImageProps } from "gatsby-plugin-image/dist/src/components/static-image.server";
 import ProjectModalContext, {
   OPEN_MODAL,
