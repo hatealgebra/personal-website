@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import HobbiesMenu from "../../molecules/switchMenu/SwitchMenu";
+import HobbiesMenu from "../../molecules/switchMenu/SwitchMenuHobbies";
 import {
   HobbyContent,
   Hobbytext,
@@ -24,31 +24,17 @@ const posibilities = Object.keys(hobbyText);
 // FIXME: 3d objects are cut when there is bigger height viewport
 // TODO: Get the typings right
 // TODO: declare modules for json imports
-const MyHobbies = () => {
+
+const PureMyHobbies = ({ data }: any) => {
   const [choosenHobby, setChoosenHobby] =
     useState<"basketball" | "music" | "movies" | "race sims">("basketball");
 
   const windowSize = useWindowSize();
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { sourceInstanceName: { eq: "3dModels" } }) {
-        edges {
-          node {
-            id
-            publicURL
-          }
-        }
-      }
-    }
-  `);
-
-  const modelArray = data.allFile.edges.map((edge) => edge.node.publicURL);
-
   function Scene() {
-    const basketball = useLoader(GLTFLoader, modelArray[1]);
-    const music = useLoader(GLTFLoader, modelArray[3]);
-    const wheel = useLoader(GLTFLoader, modelArray[0]);
-    const tumbler = useLoader(GLTFLoader, modelArray[2]);
+    const basketball = useLoader(GLTFLoader, data[1]);
+    const music = useLoader(GLTFLoader, data[3]);
+    const wheel = useLoader(GLTFLoader, data[0]);
+    const tumbler = useLoader(GLTFLoader, data[2]);
     return choosenHobby === "basketball" ? (
       <primitive object={basketball.scene} scale={0.012} />
     ) : choosenHobby === "music" ? (
@@ -59,7 +45,6 @@ const MyHobbies = () => {
       <primitive object={tumbler.scene} scale={1.4} />
     );
   }
-
   return (
     <MyHobbiesContainer>
       <HobbiesMenu
@@ -110,6 +95,25 @@ const MyHobbies = () => {
       </HobbyContent>
     </MyHobbiesContainer>
   );
+};
+
+const MyHobbies = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "3dModels" } }) {
+        edges {
+          node {
+            id
+            publicURL
+          }
+        }
+      }
+    }
+  `);
+
+  const modelArray = data.allFile.edges.map((edge) => edge.node.publicURL);
+
+  return <PureMyHobbies data={modelArray} />;
 };
 
 export default MyHobbies;
