@@ -32,7 +32,7 @@ export const SwitchMenuContainer = styled.ul<{
   flex-direction: ${(props) => props.variant};
   width: 100%;
   margin: auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
   transition: 1s all ease;
   scroll-behavior: smooth;
 

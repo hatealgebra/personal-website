@@ -61,6 +61,7 @@ const PureMyHobbies = ({ data }: any) => {
                 windowSize.width! >= Theme.breakpoints.tablet ? "55vh" : "40vh",
               width: "100%",
               maxWidth: "500px",
+              maxHeight: "500px",
               margin: "auto",
               padding: "50px 0 10px 0",
               overflow: "visible",
