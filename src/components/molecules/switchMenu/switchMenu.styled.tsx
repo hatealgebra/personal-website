@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE } from "../../../utils/helpers";
 
 // TODO: add disabled attribute
 
@@ -17,6 +18,10 @@ export const SwitchMenuButton = styled.button<{
   border: none;
   width: max-content;
   padding-left: ${({ padding }) => padding && "70px"};
+
+  ${DEVICE.desktop} {
+    font-size: ${({ theme }) => theme.fontSize["4xl"]};
+  }
 `;
 
 export const SwitchMenuContainer = styled.ul<{
@@ -27,7 +32,7 @@ export const SwitchMenuContainer = styled.ul<{
   flex-direction: ${(props) => props.variant};
   width: 100%;
   margin: auto;
-  overflow-x: scroll;
+  overflow-x: hidden;
   transition: 1s all ease;
   scroll-behavior: smooth;
 

@@ -5,9 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { DEVICE } from "../../../utils/helpers";
-import useWindowSize from "../../../utils/hooks/useWindowSize";
-import Theme from "../../particles/Theme";
+
 import { SwitchMenuButton, SwitchMenuContainer } from "./switchMenu.styled";
 export interface HobbieMenuProps {
   menuState: string;

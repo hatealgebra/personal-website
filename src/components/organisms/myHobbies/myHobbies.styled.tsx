@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { DEVICE } from "../../../utils/helpers";
 
-export const Hobbytext = styled.p``;
+export const Hobbytext = styled.p`
+  max-width: 400px;
+`;
 
 export const HobbyImageContainer = styled.div`
   width: 100%;
   min-width: 300px;
-  max-width: 700px;
+  max-width: 500px;
   height: 300px;
   background-color: black;
   cursor: pointer;
+  overflow: hidden;
 `;
 
 export const MyHobbiesImagesScroll = styled.div`
@@ -24,7 +27,7 @@ export const HobbyContent = styled.div`
   flex-direction: column;
 
   ${DEVICE.tablet} {
-    max-width: 1800px;
+    max-width: 1200px;
     margin: auto;
     flex-direction: row-reverse;
     align-items: center;
