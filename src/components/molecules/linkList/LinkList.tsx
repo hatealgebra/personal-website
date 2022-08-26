@@ -3,6 +3,7 @@ import Link, { PageLink } from "../../atoms/link/link.styled";
 import HeadingCode from "../headingCode/HeadingCode";
 import { LinkListStyled } from "./linkList.styled";
 
+// * Same case as link.styled.tsx
 const LinkList = ({ heading, linkData, isExternal }: LinkListProps) => {
   return (
     <LinkListStyled>

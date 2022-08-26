@@ -7,15 +7,6 @@ import {
 } from "./expandItem.styled";
 
 import { BiMinus } from "@react-icons/all-files/bi/BiMinus";
-import { StaticImage } from "gatsby-plugin-image";
-
-interface ExpandItemProps {
-  borders: "both" | "up" | "down";
-  number: string;
-  name: string;
-  children: any;
-  color?: "black" | "white";
-}
 
 const pathImage: string = "../../assets";
 
@@ -38,11 +29,19 @@ const ExpandItem = ({
           <BiMinus size="2rem" color={color} />
         </ExpandIcon>
       </ExpandButton>
-      <ExpandContent isOpen={isOpen}>
+      <ExpandContent data-testid="expand-item" isOpen={isOpen}>
         <div>{children}</div>
       </ExpandContent>
     </ExpandItemContainer>
   );
 };
+
+interface ExpandItemProps {
+  borders: "both" | "up" | "down";
+  number: string;
+  name: string;
+  children: any;
+  color?: "black" | "white";
+}
 
 export default ExpandItem;

@@ -1,6 +1,8 @@
 import { action } from "@storybook/addon-actions";
 import { addDecorator } from "@storybook/react";
-import styled from "styled-components";
+import { ParallaxProvider } from "react-scroll-parallax";
+import styled, { ThemeProvider } from "styled-components";
+import Theme from "../src/components/particles/Theme";
 
 import GlobalStyle from "../src/globalStyle";
 
@@ -27,10 +29,12 @@ const Flex = styled.div`
 `;
 
 addDecorator((storyFn) => (
-  <Flex>
-    <GlobalStyle />
-    {storyFn()}
-  </Flex>
+  <ThemeProvider theme={Theme}>
+    <Flex>
+      <GlobalStyle />
+      <ParallaxProvider>{storyFn()}</ParallaxProvider>
+    </Flex>
+  </ThemeProvider>
 ));
 
 export const parameters = {

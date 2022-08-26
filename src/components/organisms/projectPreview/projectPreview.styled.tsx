@@ -26,6 +26,14 @@ export const ProjectPreviewContainer = styled.div<{
       margin-top: 40px;
     }
   }
+  .see-more-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 
   ${DEVICE.laptop} {
     display: grid;

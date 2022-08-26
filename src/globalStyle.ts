@@ -163,7 +163,7 @@ p{
 .item--dissapear{
     opacity: 0;
     transition: opacity .8s ease;
-    color: ${Theme.color.black};
+    color: "lightgrey";
 }
 
 .select--underlined{

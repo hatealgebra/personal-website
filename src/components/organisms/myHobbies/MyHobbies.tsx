@@ -1,7 +1,5 @@
 import React, { Suspense, useState } from "react";
-import HobbiesMenu, {
-  HobbieMenuProps,
-} from "../../molecules/switchMenu/SwitchMenuHobbies";
+import HobbiesMenu from "../../molecules/switchMenu/SwitchMenu";
 import {
   HobbyContent,
   Hobbytext,
@@ -18,15 +16,16 @@ import Theme from "../../particles/Theme";
 
 import copywriteJSON from "../../../assets/content/copyWrite.json";
 
-import { StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 const hobbyText = copywriteJSON.pages.about.myHobbies;
 
 const posibilities = Object.keys(hobbyText);
-
+// FIXME: 3d objects are cut when there is bigger height viewport
+// TODO: Get the typings right
+// TODO: declare modules for json imports
 const MyHobbies = () => {
-  const [choosenHobbie, setChoosenHobbie] =
+  const [choosenHobby, setChoosenHobby] =
     useState<"basketball" | "music" | "movies" | "race sims">("basketball");
 
   const windowSize = useWindowSize();
@@ -43,20 +42,18 @@ const MyHobbies = () => {
     }
   `);
 
-  console.log(data);
   const modelArray = data.allFile.edges.map((edge) => edge.node.publicURL);
-  console.log(modelArray);
 
   function Scene() {
     const basketball = useLoader(GLTFLoader, modelArray[1]);
     const music = useLoader(GLTFLoader, modelArray[3]);
     const wheel = useLoader(GLTFLoader, modelArray[0]);
     const tumbler = useLoader(GLTFLoader, modelArray[2]);
-    return choosenHobbie === "basketball" ? (
+    return choosenHobby === "basketball" ? (
       <primitive object={basketball.scene} scale={0.012} />
-    ) : choosenHobbie === "music" ? (
+    ) : choosenHobby === "music" ? (
       <primitive object={music.scene} scale={15} />
-    ) : choosenHobbie === "race sims" ? (
+    ) : choosenHobby === "race sims" ? (
       <primitive object={wheel.scene} scale={1.45} />
     ) : (
       <primitive object={tumbler.scene} scale={1.4} />
@@ -66,8 +63,8 @@ const MyHobbies = () => {
   return (
     <MyHobbiesContainer>
       <HobbiesMenu
-        menuState={choosenHobbie}
-        dispatch={setChoosenHobbie}
+        menuState={choosenHobby}
+        dispatch={setChoosenHobby}
         possibilities={posibilities}
       />
       <HobbyContent>
@@ -76,7 +73,7 @@ const MyHobbies = () => {
             frameloop="demand"
             style={{
               height:
-                windowSize.width >= Theme.breakpoints.tablet ? "55vh" : "40vh",
+                windowSize.width! >= Theme.breakpoints.tablet ? "55vh" : "40vh",
               width: "100%",
               maxWidth: "500px",
               margin: "auto",
@@ -85,9 +82,9 @@ const MyHobbies = () => {
             }}
             camera={{
               zoom:
-                windowSize.width >= Theme.breakpoints.tablet
+                windowSize.width! >= Theme.breakpoints.tablet
                   ? 1
-                  : windowSize.width >= Theme.breakpoints.laptop
+                  : windowSize.width! >= Theme.breakpoints.laptop
                   ? 1.4
                   : 1.1,
             }}
@@ -109,7 +106,7 @@ const MyHobbies = () => {
             </Suspense>
           </Canvas>
         </MyHobbiesImagesScroll>
-        <Hobbytext>{hobbyText[choosenHobbie]}</Hobbytext>
+        <Hobbytext>{hobbyText[choosenHobby]}</Hobbytext>
       </HobbyContent>
     </MyHobbiesContainer>
   );

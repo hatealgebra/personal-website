@@ -31,6 +31,8 @@ export interface ProjectDetailProps {
 }
 
 // FIXME doesnt show full image, it just goes out of the way
+//  TODO: Move to the organisms folder
+// TODO: Get alert and not link to food mood app
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 

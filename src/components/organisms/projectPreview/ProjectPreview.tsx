@@ -9,6 +9,8 @@ import { IStaticImageProps } from "gatsby-plugin-image/dist/src/components/stati
 import ProjectModalContext, {
   OPEN_MODAL,
 } from "../../../context/ProjectModalContext";
+import SeeMore from "../../atoms/seeMore/SeeMore";
+import useWindowSize from "../../../utils/hooks/useWindowSize";
 
 export interface ProjectPreviewProps {
   orientation?: "left" | "center" | "right";
@@ -62,7 +64,7 @@ const ProjectPreview = ({
           ]}
           style={{ aspectRatio: "1/1.1" }}
         />
-        {/* <div className="project-preview_img">{image}</div> */}
+        {useWindowSize().width! < 1000 && <SeeMore />}
       </ProjectPreviewContainer>
     </>
   );

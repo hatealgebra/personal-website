@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { DEVICE } from "../../../utils/helpers";
-import menuState from "../../molecules/switchMenu/SwitchMenuHobbies";
 
 export const Hobbytext = styled.p``;
 

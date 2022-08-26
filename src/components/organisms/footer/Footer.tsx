@@ -23,8 +23,6 @@ const { homepage, work, about, contact } = LINKS;
 
 const footerContent = copyWriteJSON.footer;
 
-//  fixme add external links
-
 const Footer = ({}: FooterProps) => {
   return (
     <FooterContainer>
@@ -65,7 +63,7 @@ const Footer = ({}: FooterProps) => {
             heading="Projects"
             linkData={[
               { name: "Weather App", link: EXTERNALLINKS.weatherApp },
-              { name: "Food Mood", link: EXTERNALLINKS.foodMood },
+              // { name: "Food Mood", link: EXTERNALLINKS.foodMood },
             ]}
           />
         </LinkListContainer>

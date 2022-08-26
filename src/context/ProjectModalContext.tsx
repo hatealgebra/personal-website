@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { ProjectDetailProps } from "../components/molecules/projectDetail/ProjectDetail";
+import { ProjectDetailProps } from "../components/organisms/projectDetail/ProjectDetail";
 
 enum EActionType {
   OPEN_MODAL = "OPEN_MODAL",

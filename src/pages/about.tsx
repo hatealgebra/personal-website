@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import styled from "styled-components";
 import Container from "../components/molecules/container/Container";
 import ExpandItem from "../components/molecules/expandItem/ExpandItem";
-import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
+import ProjectDetail from "../components/organisms/projectDetail/ProjectDetail";
 import MyHobbies from "../components/organisms/myHobbies/MyHobbies";
 import Theme from "../components/particles/Theme";
 import PageTemplate from "../components/templates/Page.template";

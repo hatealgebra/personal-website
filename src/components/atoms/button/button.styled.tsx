@@ -16,9 +16,7 @@ const baseStyling = css`
   transition: 0.2s ease-in;
 `;
 
-export const ButtonLink = styled(NavLink).attrs((props) => ({
-  as: "button",
-}))`
+export const ButtonLink = styled.button`
   font-family: ${theme.fonts.secondary};
   font-size: ${theme.fontSize.lg};
   font-weight: ${theme.typography.medium};
@@ -46,7 +44,7 @@ const Button = styled.button<ButtonProps>`
   }
 `;
 
-interface ButtonProps {
+export interface ButtonProps {
   variant: "primary" | "secondary";
 }
 

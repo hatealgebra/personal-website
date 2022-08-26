@@ -1,29 +1,28 @@
 import React from "react";
-
-import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
-import Theme from "../../particles/Theme";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
+// * Too painful to get the storie or tests working because of the AniLink component, which is doing the transition between pages
+//  TODO: to take care of it anyway, because the storybook stories and test are affected byt thi issue
 export const PageLink = styled((props) => (
   <AniLink fade duration={2} {...props} />
 ))`
-  font-size: ${Theme.fontSize.md};
+  font-size: ${({ theme }) => theme.fontSize.md};
   text-decoration: none;
   text-transform: capitalize;
 `;
 
 export const NavLink = styled(PageLink)`
-  font-family: ${Theme.fonts.secondary};
-  font-size: ${Theme.fontSize.lg};
-  font-weight: ${Theme.typography.medium};
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-weight: ${({ theme }) => theme.typography.medium};
 `;
 
 const Link = styled((props) => <PageLink {...props} />)`
   display: inline-block;
-  font-family: ${Theme.fonts.alt};
-  color: ${({ white }) => (white ? "white" : Theme.color.black)};
-  font-size: ${Theme.fontSize.lg};
+  font-family: ${({ theme }) => theme.fonts.alt};
+  color: ${({ white, theme }) => (white ? "white" : theme.color.black)};
+  font-size: ${({ theme }) => theme.fontSize.lg};
   font-style: italic;
   position: relative;
   top: 20px;
@@ -32,7 +31,8 @@ const Link = styled((props) => <PageLink {...props} />)`
     content: "";
     position: absolute;
     width: 100%;
-    background-color: ${({ white }) => (white ? "white" : Theme.color.black)};
+    background-color: ${({ white, theme }) =>
+      white ? "white" : theme.color.black};
     height: 2px;
     bottom: 0;
     left: 0;

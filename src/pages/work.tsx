@@ -3,7 +3,7 @@ import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import styled from "styled-components";
 import Container from "../components/molecules/container/Container";
-import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
+import ProjectDetail from "../components/organisms/projectDetail/ProjectDetail";
 import WorkShowcase from "../components/organisms/workShowcase/WorkShowcase";
 import Theme from "../components/particles/Theme";
 import PageTemplate from "../components/templates/Page.template";

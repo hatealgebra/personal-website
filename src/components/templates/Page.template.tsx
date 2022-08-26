@@ -1,13 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import ProjectModalContext, {
-  ProjectModalProvider,
-} from "../../context/ProjectModalContext";
 import GlobalStyle from "../../globalStyle";
 import useWindowSize from "../../utils/hooks/useWindowSize";
-import MenuButton from "../atoms/menuButton/MenuButton";
-import MobileMenu from "../molecules/mobileMenu/MobileMenu";
-import ProjectDetail from "../molecules/projectDetail/ProjectDetail";
+import MenuButton from "../atoms/button/MenuButton";
+import MobileMenu from "../organisms/mobileMenu/MobileMenu";
 import Footer from "../organisms/footer/Footer";
 import TopBar from "../organisms/topBar/TopBar";
 import ContextProviderComponent from "../particles/ContextProviderComponent";

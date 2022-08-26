@@ -1,19 +1,18 @@
-import { Ref } from "react";
 import styled from "styled-components";
-import Theme from "../../particles/Theme";
 
-// todo add disabled attribute
+// TODO: add disabled attribute
 
 export const SwitchMenuButton = styled.button<{
   isClicked: boolean;
   padding?: boolean;
 }>`
   display: inline;
-  font-family: ${Theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   text-transform: uppercase;
-  font-size: ${Theme.fontSize["3xl"]};
-  font-weight: ${Theme.typography.extrabold};
-  color: ${({ isClicked }) => (isClicked && Theme.color.black) || "lightgrey"};
+  font-size: ${({ theme }) => theme.fontSize["3xl"]};
+  font-weight: ${({ theme }) => theme.typography.extrabold};
+  color: ${({ isClicked, theme }) =>
+    (isClicked && theme.color.black) || "lightgrey"};
   background: none;
   border: none;
   width: max-content;
@@ -28,7 +27,7 @@ export const SwitchMenuContainer = styled.ul<{
   flex-direction: ${(props) => props.variant};
   width: 100%;
   margin: auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
   transition: 1s all ease;
   scroll-behavior: smooth;
 

@@ -8,6 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { gatsbyImageslabPreview } from "../../../utils/helpers/graphql";
 
 // TODO add see more to the images
+// TODO zoom on image when hovering
 
 const { work: workContent } = copyWriteJSON.pages;
 

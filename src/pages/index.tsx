@@ -23,10 +23,11 @@ import { DEVICE as device } from "../utils/helpers";
 import { LINKS } from "../utils/contants";
 import { ParallaxBanner } from "react-scroll-parallax";
 import useWindowSize from "../utils/hooks/useWindowSize";
-import ProjectDetail from "../components/molecules/projectDetail/ProjectDetail";
+import ProjectDetail from "../components/organisms/projectDetail/ProjectDetail";
 import { gatsbyImageslabPreview } from "../utils/helpers/graphql";
 
 //  TODO README
+// FIXME Parallex scroll is on safari little bit shuttering
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
@@ -89,6 +90,7 @@ const ScrollLabel = styled.div`
   }
 `;
 
+// FIXME Don't center vertically to 50%, just little bit higher, because on the mobile device, the text is not shown fullly, because of the panel of the browsers/ example safari
 const HeroContainer = styled.div<HeroContainerProps>`
   position: relative;
   display: grid;
