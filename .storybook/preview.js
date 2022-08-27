@@ -3,6 +3,7 @@ import { addDecorator } from "@storybook/react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "../src/components/particles/Theme";
+import TransitionLinkProvider from "gatsby-plugin-transition-link/context/InternalProvider";
 
 import GlobalStyle from "../src/globalStyle";
 
@@ -28,14 +29,19 @@ const Flex = styled.div`
   flex-wrap: wrap;
 `;
 
-addDecorator((storyFn) => (
-  <ThemeProvider theme={Theme}>
-    <Flex>
-      <GlobalStyle />
-      <ParallaxProvider>{storyFn()}</ParallaxProvider>
-    </Flex>
-  </ThemeProvider>
-));
+addDecorator((storyFn) => {
+  window.matchMedia = () => true;
+  return (
+    <TransitionLinkProvider>
+      <ThemeProvider theme={Theme}>
+        <Flex>
+          <GlobalStyle />
+          <ParallaxProvider>{storyFn()}</ParallaxProvider>
+        </Flex>
+      </ThemeProvider>
+    </TransitionLinkProvider>
+  );
+});
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

@@ -21,11 +21,9 @@ import { graphql, useStaticQuery } from "gatsby";
 const hobbyText = copywriteJSON.pages.about.myHobbies;
 
 const posibilities = Object.keys(hobbyText);
-// FIXME: 3d objects are cut when there is bigger height viewport
 // TODO: Get the typings right
-// TODO: declare modules for json imports
 
-const PureMyHobbies = ({ data }: any) => {
+export const PureMyHobbies = ({ data }: any) => {
   const [choosenHobby, setChoosenHobby] =
     useState<"basketball" | "music" | "movies" | "race sims">("basketball");
 
