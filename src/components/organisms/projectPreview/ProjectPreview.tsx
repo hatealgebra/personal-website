@@ -19,7 +19,7 @@ export interface ProjectPreviewProps {
   techStack: string[];
   date: number;
   children: React.ReactNode;
-  image: ReactElement<IStaticImageProps>;
+  image: ReactElement<IStaticImageProps> | null;
   liveLink: string;
 }
 
@@ -64,7 +64,7 @@ const ProjectPreview = ({
           ]}
           style={{ aspectRatio: "1/1.1" }}
         />
-        {useWindowSize().width! < 1000 && <SeeMore />}
+        {/* {useWindowSize().width! < 1000 && <SeeMore />} */}
       </ProjectPreviewContainer>
     </>
   );
