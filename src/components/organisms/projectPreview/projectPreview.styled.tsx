@@ -10,10 +10,12 @@ export const ProjectPreviewHeading = styled.h4`
 
 export const ProjectPreviewContainer = styled.div<{
   orientation: "left" | "center" | "right";
+  noImage?: boolean;
 }>`
   text-align: ${(props) => props.orientation};
   margin: 50px 0px;
   box-sizing: border-box;
+
   cursor: pointer;
   .project-preview {
     box-sizing: border-box;
@@ -24,6 +26,7 @@ export const ProjectPreviewContainer = styled.div<{
       width: 100%;
       max-width: 600px;
       margin-top: 40px;
+      background-color: "black";
     }
   }
   .see-more-button {

@@ -4,6 +4,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "../src/components/particles/Theme";
 import TransitionLinkProvider from "gatsby-plugin-transition-link/context/InternalProvider";
+import { LocationProvider } from "@reach/router";
 
 import GlobalStyle from "../src/globalStyle";
 
@@ -30,16 +31,19 @@ const Flex = styled.div`
 `;
 
 addDecorator((storyFn) => {
+  // TransitionLinkProvider and global function matchMedia added, because the AniLink was throwing undefined error in storybook
   window.matchMedia = () => true;
   return (
-    <TransitionLinkProvider>
-      <ThemeProvider theme={Theme}>
-        <Flex>
-          <GlobalStyle />
-          <ParallaxProvider>{storyFn()}</ParallaxProvider>
-        </Flex>
-      </ThemeProvider>
-    </TransitionLinkProvider>
+    <LocationProvider>
+      <TransitionLinkProvider>
+        <ThemeProvider theme={Theme}>
+          <Flex>
+            <GlobalStyle />
+            <ParallaxProvider>{storyFn()}</ParallaxProvider>
+          </Flex>
+        </ThemeProvider>
+      </TransitionLinkProvider>
+    </LocationProvider>
   );
 });
 

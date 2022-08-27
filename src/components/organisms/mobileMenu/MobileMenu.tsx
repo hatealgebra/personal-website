@@ -11,7 +11,6 @@ import {
   MobileMenuTopBar,
 } from "./mobileMenu.styled";
 import { ButtonLink } from "../../atoms/button/button.styled";
-import ProjectModalContext from "../../../context/ProjectModalContext";
 
 interface MobileMenuprops {
   isOpen: boolean;
@@ -21,18 +20,18 @@ interface MobileMenuprops {
 const MobileMenu = ({ isOpen, close }: MobileMenuprops) => {
   const linkValues = Object.values(LINKS);
   const { pathname } = useLocation();
-  const { projectModalState } = useContext(ProjectModalContext);
 
   return (
-    <MobileMenuContainer isOpen={isOpen}>
+    <MobileMenuContainer data-testid="mobile-menu__container" isOpen={isOpen}>
       <MobileMenuTopBar>
         <NavLink to="/about-me">Pavel Vondra</NavLink>
         <ButtonLink onClick={close}>Close</ButtonLink>
       </MobileMenuTopBar>
       <MobileMenuNavContainer>
         <MobileMenuNav>
-          {linkValues.map((link) => (
+          {linkValues.map((link, i) => (
             <Link
+              key={link + i}
               className={(link === pathname && "select--underlined") || ""}
               to={link}
             >

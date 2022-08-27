@@ -37,6 +37,7 @@ const TopBar = (props) => {
                 .splice(1)
                 .map((link, i) => (
                   <li
+                    key={link + i}
                     className={link === pathname && "select--underlined"}
                     key={`navlink${i}`}
                   >

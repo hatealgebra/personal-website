@@ -21,9 +21,8 @@ const SwitchMenu = ({
     <SwitchMenuContainer className="switch-menu" variant="column">
       {possibilities.map((menuItem, i) => {
         return (
-          <li>
+          <li key={`menuItem-${i}`}>
             <SwitchMenuButton
-              key={`menuItem-${i}`}
               isClicked={menuItem === menuState ? true : false}
               onClick={(e) => {
                 e.preventDefault();

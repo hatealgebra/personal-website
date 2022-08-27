@@ -1,11 +1,22 @@
 import React from "react";
+import { ComponentStory } from "@storybook/react";
 import LinkList from "./LinkList";
+import { LinkListContainer } from "../../organisms/footer/footer.styled";
 
-const Template = (args) => <LinkList {...args} />;
+const Template: ComponentStory<typeof LinkList> = (args) => (
+  <div style={{ backgroundColor: "black", width: "100%", height: "100%" }}>
+    <LinkListContainer>
+      <LinkList {...args} />
+    </LinkListContainer>
+  </div>
+);
 export const LinkListExample = Template.bind({});
 LinkListExample.args = {
   heading: "Hello",
-  linkData: ["link 1", "link 2", "link 3"],
+  linkData: [
+    { name: "Facebook", link: "facebook.com" },
+    { name: "Instagram", link: "instagram.com" },
+  ],
 };
 
 export default {

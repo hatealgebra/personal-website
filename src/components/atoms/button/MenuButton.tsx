@@ -36,7 +36,7 @@ const MenuContainer = styled.button`
 const MenuButton = ({ dispatch }: MenuButtonProps) => {
   return (
     <MenuContainer onClick={() => dispatch()}>
-      <CgMenuRight fontSize={"1.3rem"} />
+      <CgMenuRight fontSize={"1.3rem"} color="black" />
     </MenuContainer>
   );
 };

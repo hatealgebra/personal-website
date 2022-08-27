@@ -14,8 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "NODE_ENV=production start-storybook -p 6006 -s static",
+    "build-storybook": "NODE_ENV=production build-storybook -s static",
     "test": "jest --watch"
   },
   "dependencies": {
@@ -74,7 +74,7 @@
     "@types/body-scroll-lock": "^3.1.0",
     "@types/jest": "^28.1.7",
     "@types/node": "^17.0.31",
-    "@types/react": "^17.0.45",
+    "@types/react": "^17.0.48",
     "@types/react-dom": "^17.0.16",
     "@types/react-test-renderer": "^18.0.0",
     "@types/styled-components": "^5.1.25",

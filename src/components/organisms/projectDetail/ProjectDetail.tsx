@@ -30,14 +30,12 @@ export interface ProjectDetailProps {
   setIsOpen: Dispatch<SetStateAction<any>>;
 }
 
-// FIXME doesnt show full image, it just goes out of the way
-//  TODO: Move to the organisms folder
 // TODO: Get alert and not link to food mood app
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
   const windowSize = useWindowSize();
-  const biggerTablet = windowSize.width >= Theme.breakpoints.tablet;
+  const biggerTablet = windowSize.width! >= Theme.breakpoints.tablet;
 
   const data = gatsbyImagesLab();
   const modalRef = React.createRef();
@@ -112,7 +110,7 @@ const ProjectDetail = () => {
             </ProjectDetailInfo>
             <ProjectDetailImages>
               {imagesData.edges
-                .filter((node, i) => i > 0)
+                .filter((node, i: number) => i > 0)
                 .map(({ node: imageData }) => (
                   <GatsbyImage
                     image={getImage(imageData.childImageSharp.gatsbyImageData)}

@@ -1,21 +1,19 @@
 import React from "react";
 
-import { StaticImage } from "gatsby-plugin-image";
+//  TODO: write test
 import ProjectPreview from "./ProjectPreview";
 
-// export const ProjectPreviewExample = (
-//   <ProjectPreview
-//     heading="Weather App"
-//     image={
-//       <StaticImage src="../../assets/images/pancakes.jpg" alt="Pancakes" />
-//     }
-//   >
-//     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum iusto
-//     recusandae autem aliquid ducimus architecto sed! Beatae repellendus, eos,
-//     quo explicabo similique distinctio tempore perferendis aspernatur
-//     consequatur, eius dicta nam.
-//   </ProjectPreview>
-// );
+export const RandomProjectPrevie = () => (
+  <ProjectPreview
+    heading="random app"
+    infoProject="Hello world!"
+    techStack={["typescript", "react"]}
+    date={9312938128391283}
+    children="Hello World Description!"
+    image={null}
+    liveLink="http://localhost"
+  />
+);
 
 export default {
   title: "Molecules/Project Preview",
