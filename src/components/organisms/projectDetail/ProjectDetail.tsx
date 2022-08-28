@@ -18,6 +18,7 @@ import { gatsbyImagesLab } from "../../../utils/helpers/graphql";
 import useWindowSize from "../../../utils/hooks/useWindowSize";
 import Theme from "../../particles/Theme";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { relative } from "path";
 
 export interface ProjectDetailProps {
   heading: string;
@@ -30,6 +31,7 @@ export interface ProjectDetailProps {
 }
 
 // TODO: Create netlify app with the same name as the link from JSON
+// FIXME: Fluid images, so they are more responsive
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
@@ -80,58 +82,53 @@ const ProjectDetail = () => {
             Close
           </LightButton>
         </ProjectDetailPanel>
-        <div
-          className="detail-content"
-          style={{ display: "flex", alignItems: "center" }}
-        >
-          <ProjectDetailInfoContainer>
-            <ProjectDetailInfo>
-              <div>
-                <h4>{infoProject}</h4>
-                {!biggerTablet && (
-                  <Link white to={liveLink}>
-                    Visit live link
-                  </Link>
-                )}
+        <ProjectDetailInfoContainer>
+          <ProjectDetailInfo>
+            <div>
+              <h4>{infoProject}</h4>
+              {!biggerTablet && (
+                <Link white to={liveLink}>
+                  Visit live link
+                </Link>
+              )}
+            </div>
+            <div>
+              <div className="project-info_item">
+                <h5>Project info</h5>
               </div>
-              <div>
-                <div className="project-info_item">
-                  <h5>Project info</h5>
-                </div>
-                <div className="project-info_item">
-                  <span>Project name</span>
-                  <span>{heading}</span>
-                </div>
-                <div className="project-info_item">
-                  <span>Tech stack</span>
-                  <span>{techStack.map((tech) => `${tech}, `)}</span>
-                </div>
-                <div className="project-info_item">
-                  <span>Date</span>
-                  <span>{date}</span>
-                </div>
+              <div className="project-info_item">
+                <span>Project name</span>
+                <span>{heading}</span>
               </div>
-            </ProjectDetailInfo>
-            <ProjectDetailImages>
-              {imagesData.edges
-                .filter(
-                  (imageData: typeof imagesData.edges[0], i: number) => i > 0
-                )
-                .map((imageData: typeof imagesData.edges[0], i: number) => (
-                  <GatsbyImage
-                    image={
-                      getImage(imageData.node.childImageSharp.gatsbyImageData)!
-                    }
-                    alt={imageData.node.relativePath + i}
-                    className="project-info__image"
-                    objectFit="contain"
-                    objectPosition="left"
-                    loading="eager"
-                  />
-                ))}
-            </ProjectDetailImages>
-          </ProjectDetailInfoContainer>
-        </div>
+              <div className="project-info_item">
+                <span>Tech stack</span>
+                <span>{techStack.map((tech) => `${tech}, `)}</span>
+              </div>
+              <div className="project-info_item">
+                <span>Date</span>
+                <span>{date}</span>
+              </div>
+            </div>
+          </ProjectDetailInfo>
+          <ProjectDetailImages>
+            {imagesData.edges
+              .filter(
+                (imageData: typeof imagesData.edges[0], i: number) => i > 0
+              )
+              .map((imageData: typeof imagesData.edges[0], i: number) => (
+                <GatsbyImage
+                  image={
+                    getImage(imageData.node.childImageSharp.gatsbyImageData)!
+                  }
+                  alt={imageData.node.relativePath + i}
+                  className="project-info__image"
+                  objectFit="contain"
+                  objectPosition="left"
+                  loading="eager"
+                />
+              ))}
+          </ProjectDetailImages>
+        </ProjectDetailInfoContainer>
       </ProjectDetailContainer>
     );
   } else {

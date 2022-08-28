@@ -9,6 +9,7 @@ export const ProjectDetailImages = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-top: 30px;
+  padding-bottom: 30px;
 
   img {
     height: 100%;
@@ -16,11 +17,11 @@ export const ProjectDetailImages = styled.div`
 
   .project-info__image {
     width: 100%;
-    height: fit-content;
     height: auto;
   }
 
   ${DEVICE.tablet} {
+    padding-bottom: 0;
     margin-top: 0px;
     margin-left: 50px;
     grid-row: 1/3;
@@ -28,17 +29,29 @@ export const ProjectDetailImages = styled.div`
     flex-direction: row;
 
     .project-info__image {
-      height: auto;
-      max-height: 600px;
-      width: 1200px;
-      max-width: 1200px;
+      width: 800px;
     }
   }
 
   ${DEVICE.laptop} {
     .project-info__image {
-      max-width: 1000px;
-      max-height: 650px;
+      width: 850px;
+    }
+  }
+
+  ${DEVICE.desktop} {
+    .project-info__image {
+      width: 1000px;
+    }
+  }
+  @media only screen and (min-width: 1900px) {
+    .project-info__image {
+      width: 1100px;
+    }
+  }
+  ${DEVICE.highRes} {
+    .project-info__image {
+      width: 1250px;
     }
   }
 `;
@@ -86,7 +99,10 @@ export const ProjectDetailInfoContainer = styled.section`
   padding: 0 5%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+
   ${DEVICE.tablet} {
+    margin-top: 3%;
     height: 80%;
     flex-direction: row;
     min-height: 500px;
@@ -130,7 +146,6 @@ export const ProjectDetailContainer = styled.div<{
   width: 100%;
 
   ${DEVICE.tablet} {
-    overflow-y: hidden;
     .detail-content {
       overflow-x: auto;
       margin-top: 0% !important;
