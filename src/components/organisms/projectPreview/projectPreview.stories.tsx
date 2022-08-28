@@ -1,6 +1,5 @@
 import React from "react";
 
-//  TODO: write test
 import ProjectPreview from "./ProjectPreview";
 
 export const RandomProjectPrevie = () => (

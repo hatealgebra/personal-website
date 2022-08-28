@@ -39,7 +39,7 @@ const WorkShowcase = () => {
               liveLink={data.live_link}
               image={
                 <GatsbyImage
-                  image={imagesPreview[index]}
+                  image={imagesPreview[index]!}
                   alt="Pancakes"
                   style={{ width: "100%", height: "100%" }}
                 />

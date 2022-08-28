@@ -59,9 +59,7 @@ const GreetingContainer = styled.div`
   }
 `;
 
-// TODO copywriting man
-
-const { aboutMe, myHobbies } = copyWriteJSON.pages.about;
+const { aboutMe } = copyWriteJSON.pages.about;
 
 const about = () => {
   const windowSize = useWindowSize();

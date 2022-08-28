@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useContext, useEffect } from "react";
 
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { LightButton } from "../../atoms/button/button.styled";
 import Link from "../../atoms/link/link.styled";
 import {
@@ -29,7 +29,7 @@ export interface ProjectDetailProps {
   setIsOpen: Dispatch<SetStateAction<any>>;
 }
 
-// TODO: Get alert and not link to food mood app
+// TODO: Create netlify app with the same name as the link from JSON
 const ProjectDetail = () => {
   const { projectModalState, action } = useContext(ProjectModalContext);
 
@@ -37,13 +37,13 @@ const ProjectDetail = () => {
   const biggerTablet = windowSize.width! >= Theme.breakpoints.tablet;
 
   const data = gatsbyImagesLab();
-  const modalRef = React.createRef();
+  const modalRef = React.createRef<HTMLDivElement | HTMLElement | Element>();
 
   useEffect(() => {
     if (projectModalState?.isOpen === true) {
-      disableBodyScroll(modalRef.current);
+      disableBodyScroll(modalRef.current!);
     } else {
-      enableBodyScroll(modalRef.current);
+      enableBodyScroll(modalRef.current!);
     }
   }, [projectModalState]);
 
@@ -54,6 +54,7 @@ const ProjectDetail = () => {
     const nameOfProject = heading.replace(" ", "");
 
     const imagesData = data[nameOfProject];
+    console.log(imagesData);
 
     return (
       <ProjectDetailContainer
@@ -113,10 +114,15 @@ const ProjectDetail = () => {
             </ProjectDetailInfo>
             <ProjectDetailImages>
               {imagesData.edges
-                .filter((node, i: number) => i > 0)
-                .map(({ node: imageData }) => (
+                .filter(
+                  (imageData: typeof imagesData.edges[0], i: number) => i > 0
+                )
+                .map((imageData: typeof imagesData.edges[0], i: number) => (
                   <GatsbyImage
-                    image={getImage(imageData.childImageSharp.gatsbyImageData)}
+                    image={
+                      getImage(imageData.node.childImageSharp.gatsbyImageData)!
+                    }
+                    alt={imageData.node.relativePath + i}
                     className="project-info__image"
                     objectFit="contain"
                     objectPosition="left"

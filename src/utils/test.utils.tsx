@@ -7,8 +7,6 @@ import GlobalStyle from "../globalStyle";
 import TransitionLinkProvider from "gatsby-plugin-transition-link/context/InternalProvider";
 import { LocationProvider } from "@reach/router";
 
-// TODO: Uncomment and fix ts warnings
-
 export const setupTest = (children: React.ReactNode) => {
   // @ts-ignore: queryMedia
   window.matchMedia = () => true;

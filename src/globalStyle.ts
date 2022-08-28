@@ -13,12 +13,10 @@ import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/300.css";
 import { createGlobalStyle } from "styled-components";
 
-import Theme from "./components/particles/Theme";
-
 import theme from "./components/particles/Theme";
 import { DEVICE } from "./utils/helpers";
 
-// FIXME more elegant font import
+// TODO more elegant font import
 
 const GlobalStyle = createGlobalStyle`
 

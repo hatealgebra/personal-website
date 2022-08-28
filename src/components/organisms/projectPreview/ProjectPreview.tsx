@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useContext, useState } from "react";
+import React, { ReactElement, useContext } from "react";
 import {
   ProjectPreviewContainer,
   ProjectPreviewHeading,
@@ -9,8 +9,6 @@ import { IStaticImageProps } from "gatsby-plugin-image/dist/src/components/stati
 import ProjectModalContext, {
   OPEN_MODAL,
 } from "../../../context/ProjectModalContext";
-import SeeMore from "../../atoms/seeMore/SeeMore";
-import useWindowSize from "../../../utils/hooks/useWindowSize";
 
 export interface ProjectPreviewProps {
   orientation?: "left" | "center" | "right";

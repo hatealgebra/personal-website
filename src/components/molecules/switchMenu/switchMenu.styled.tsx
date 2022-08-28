@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { DEVICE } from "../../../utils/helpers";
 
-// TODO: add disabled attribute
-
 export const SwitchMenuButton = styled.button<{
   isClicked: boolean;
   padding?: boolean;

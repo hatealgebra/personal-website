@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React, { Dispatch, useContext } from "react";
+import React, { Dispatch } from "react";
 import { NavLink } from "../../atoms/link/link.styled";
 import { useLocation } from "@reach/router";
 import { LINKS } from "../../../utils/contants";

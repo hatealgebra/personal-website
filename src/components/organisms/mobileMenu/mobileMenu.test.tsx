@@ -2,8 +2,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import { setupTest } from "../../../utils/test.utils";
 import MobileMenu from "./MobileMenu";
-import { screen, waitFor } from "@testing-library/dom";
-import { MobileMenuExample } from "./mobileMenu.stories";
+import { waitFor } from "@testing-library/dom";
 
 const MobilMenuContainerTest = () => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -23,20 +22,3 @@ describe("Mobile menu interactivity", () => {
     });
   });
 });
-
-// describe("Mobile menu location awareness", () => {
-//   test("Underline link based on the path", async () => {
-//     delete global.window.location;
-//     global.window = Object.create(window);
-//     global.window.location = {
-//       href: "https://pavel-vondra.com",
-//       pathname: "about",
-//     };
-//     const { getAllByRole } = setupTest(<MobileMenuExample />);
-//     waitFor(() => {
-//       getAllByRole("link").map((link) =>
-//         expect(link).toHaveStyle({ "text-decoration": "none" })
-//       );
-//     });
-//   });
-// });

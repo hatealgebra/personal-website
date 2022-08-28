@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-// * Too painful to get the storie or tests working because of the AniLink component, which is doing the transition between pages
-//  TODO: to take care of it anyway, because the storybook stories and test are affected byt thi issue
 export const PageLink = styled((props) => (
   <AniLink fade duration={2} {...props} />
 ))`

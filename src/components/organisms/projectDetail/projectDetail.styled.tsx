@@ -110,7 +110,10 @@ export const ProjectDetailPanel = styled.nav`
   }
 `;
 
-export const ProjectDetailContainer = styled.div<{ isOpen: boolean }>`
+export const ProjectDetailContainer = styled.div<{
+  isOpen: boolean;
+  ref: any;
+}>`
   position: fixed;
   top: 0;
   left: 0;

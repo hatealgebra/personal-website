@@ -106,6 +106,8 @@
     "./gatsby-node.ts",
     "./gatsby-config.ts",
     "./plugins/**/*",
-    "cypress"
-  ]
+    "cypress",
+    "src/**/*"
+  ],
+  "exclude": ["cypress"]
 }

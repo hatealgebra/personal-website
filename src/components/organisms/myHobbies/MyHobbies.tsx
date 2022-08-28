@@ -10,7 +10,7 @@ import {
 import { Canvas, useLoader } from "@react-three/fiber";
 
 import { Environment, OrbitControls, Preload } from "@react-three/drei";
-import { GLTFLoader } from "three-stdlib";
+import { GLTF, GLTFLoader } from "three-stdlib";
 import useWindowSize from "../../../utils/hooks/useWindowSize";
 import Theme from "../../particles/Theme";
 
@@ -21,7 +21,6 @@ import { graphql, useStaticQuery } from "gatsby";
 const hobbyText = copywriteJSON.pages.about.myHobbies;
 
 const posibilities = Object.keys(hobbyText);
-// TODO: Get the typings right
 
 export const PureMyHobbies = ({ data }: any) => {
   const [choosenHobby, setChoosenHobby] =
@@ -29,10 +28,10 @@ export const PureMyHobbies = ({ data }: any) => {
 
   const windowSize = useWindowSize();
   function Scene() {
-    const basketball = useLoader(GLTFLoader, data[1]);
-    const music = useLoader(GLTFLoader, data[3]);
-    const wheel = useLoader(GLTFLoader, data[0]);
-    const tumbler = useLoader(GLTFLoader, data[2]);
+    const basketball = useLoader(GLTFLoader, data[1]) as GLTF;
+    const music = useLoader(GLTFLoader, data[3]) as GLTF;
+    const wheel = useLoader(GLTFLoader, data[0]) as GLTF;
+    const tumbler = useLoader(GLTFLoader, data[2]) as GLTF;
     return choosenHobby === "basketball" ? (
       <primitive object={basketball.scene} scale={0.012} />
     ) : choosenHobby === "music" ? (
@@ -110,7 +109,9 @@ const MyHobbies = () => {
     }
   `);
 
-  const modelArray = data.allFile.edges.map((edge) => edge.node.publicURL);
+  const modelArray = data.allFile.edges.map(
+    (edge: typeof data.allFiles.edges[0]) => edge.node.publicURL
+  );
 
   return <PureMyHobbies data={modelArray} />;
 };
