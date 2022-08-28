@@ -14,7 +14,6 @@ import ProjectModalContext, {
   CLOSE_MODAL,
 } from "../../../context/ProjectModalContext";
 
-import { graphql, useStaticQuery } from "gatsby";
 import { gatsbyImagesLab } from "../../../utils/helpers/graphql";
 import useWindowSize from "../../../utils/hooks/useWindowSize";
 import Theme from "../../particles/Theme";
@@ -57,7 +56,11 @@ const ProjectDetail = () => {
     const imagesData = data[nameOfProject];
 
     return (
-      <ProjectDetailContainer isOpen={isOpen} ref={modalRef}>
+      <ProjectDetailContainer
+        data-testid="project-detail-modal"
+        isOpen={isOpen}
+        ref={modalRef}
+      >
         <ProjectDetailPanel>
           <span>Lab project</span>
           {biggerTablet && (

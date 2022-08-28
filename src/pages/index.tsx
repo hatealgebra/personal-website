@@ -26,8 +26,10 @@ import useWindowSize from "../utils/hooks/useWindowSize";
 import ProjectDetail from "../components/organisms/projectDetail/ProjectDetail";
 import { gatsbyImageslabPreview } from "../utils/helpers/graphql";
 
-//  TODO README
+//  TODO README Cypress section
 // FIXME Parallex scroll is on safari little bit shuttering
+// TODO Write all coverages for stories if possbile
+// TODO Write Cypress tests
 
 const HelloThereHero = styled.div`
   grid-column: 1/3;
