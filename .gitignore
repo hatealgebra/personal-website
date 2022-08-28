@@ -3,3 +3,7 @@ node_modules
 logs/
 .cache/
 public/
+
+# CYPRESS testing 
+cypress/videos
+cypress/screenshots
