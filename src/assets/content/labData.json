@@ -15,7 +15,7 @@
       "tech_stack": ["TypeScript", "CSS", "HTML", "Styled Components"],
       "live_link": "https://weather-application-pv.netlify.app",
       "preview_text": "Weather application, that shows weather and some tourist attractions.",
-      "info_project": "Web app where user can search, save and set own meal plan. Its goal is to get healthy and interesting recipes",
+      "info_project": "Small SPA weather application, that displays current weather and forecast for the next hours/days. Also shows tourist POI.",
       "images": "../assets/images/weather-preview.jpg"
     }
   ]
