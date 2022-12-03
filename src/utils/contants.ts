@@ -7,13 +7,13 @@ export const LINKS = {
   contact: "/contact",
 };
 
-export const SOCIALLINKS = {
+export const SOCIAL_LINKS = {
   linkedIn: "https://www.linkedin.com/in/pavel-vondra-603012201/",
   instagram: "https://www.instagram.com/hatealgebra/",
   github: "https://github.com/hatealgebra",
 };
 
-export const EXTERNALLINKS = {
+export const EXTERNAL_LINKS = {
   weatherApp: "https://weather-application-pv.netlify.app",
   foodMood: "https://food-mood-pv.netlify.app",
 };

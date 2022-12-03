@@ -49,7 +49,7 @@ export const ContactPageLink = styled.a`
 `;
 
 export const Email = styled.a.attrs((props) => ({
-  href: "mailto:Hello@pavel-vondra.com",
+  href: "mailto:contact@pavel-vondra.com",
 }))`
   ${contactLinkStyling};
   color: ${Theme.color.gold};

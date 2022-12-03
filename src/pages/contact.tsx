@@ -9,7 +9,7 @@ import {
 import TopBar from "../components/organisms/topBar/TopBar";
 import Theme from "../components/particles/Theme";
 import PageTemplate from "../components/templates/Page.template";
-import { SOCIALLINKS } from "../utils/contants";
+import { SOCIAL_LINKS } from "../utils/contants";
 import useWindowSize from "../utils/hooks/useWindowSize";
 
 const ContactFooter = styled.footer`
@@ -38,8 +38,8 @@ const Header = styled.div`
 
 const contact = () => {
   const windowWidth = useWindowSize().width;
-  const socialValues = Object.values(SOCIALLINKS);
-  const socialKeys = Object.keys(SOCIALLINKS);
+  const socialValues = Object.values(SOCIAL_LINKS);
+  const socialKeys = Object.keys(SOCIAL_LINKS);
 
   return (
     <PageTemplate woFooter>
@@ -57,10 +57,10 @@ const contact = () => {
           send me a message
         </SmallHeading>
         <ContactPageLink
-          href="mailto:Hello@pavel-vondra.com"
+          href="mailto:contact@pavel-vondra.com"
           style={{ color: "white" }}
         >
-          Hello@pavel-vondra.com
+          contact@pavel-vondra.com
         </ContactPageLink>
       </Container>
       <Container background="black">

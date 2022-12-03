@@ -49,7 +49,11 @@ const ProjectPreview = ({
 
   return (
     <>
-      <ProjectPreviewContainer orientation={orientation} onClick={openModal}>
+      <ProjectPreviewContainer
+        orientation={orientation}
+        onClick={openModal}
+        data-cy="project-preview"
+      >
         <ProjectPreviewHeading>{heading}</ProjectPreviewHeading>
         <p className="project-preview_text">{children}</p>
         <ParallaxBanner

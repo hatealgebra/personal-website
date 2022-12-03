@@ -94,6 +94,7 @@ const about = () => {
           src="../assets/images/greeting.png"
           alt="Greeting memoji as Paul"
           style={{ zIndex: 2 }}
+          data-cy="apple-avatar"
         />
       </GreetingContainer>
       <Container background="black">
@@ -144,6 +145,7 @@ const about = () => {
           </ExpandItem>
         </ExpandMenu>
       </Container>
+
       {windowSize.width && windowSize.width >= Theme.breakpoints.tablet ? (
         <Fade direction="up" triggerOnce>
           <MyHobbies />

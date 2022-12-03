@@ -12,13 +12,15 @@ describe("interactivity of the item", () => {
   test("expand content", async () => {
     userEvent.click(getByRole("button"));
     await waitFor(() =>
-      expect(getByTestId("expand-item")).toHaveStyle({ "max-height": "auto" })
+      expect(getByTestId("expand-content-01")).toHaveStyle({
+        "max-height": "auto",
+      })
     );
   });
   test("hide content", async () => {
     userEvent.click(getByRole("button"));
     await waitFor(() =>
-      expect(getByTestId("expand-item")).toHaveStyle({ "max-height": 0 })
+      expect(getByTestId("expand-content-01")).toHaveStyle({ "max-height": 0 })
     );
   });
 });

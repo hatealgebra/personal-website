@@ -6,7 +6,7 @@ import { LinkListStyled } from "./linkList.styled";
 // * Same case as link.styled.tsx
 const LinkList = ({ heading, linkData, isExternal }: LinkListProps) => {
   return (
-    <LinkListStyled>
+    <LinkListStyled data-cy={`menu-${heading}`}>
       <dt className="link-list_heading">
         <HeadingCode linkHeading>{heading}</HeadingCode>
       </dt>

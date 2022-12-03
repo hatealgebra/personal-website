@@ -1,3 +1,5 @@
+import "@testing-library/cypress/add-commands";
+import "cypress-real-events";
 /// <reference types="cypress" />
 // ***********************************************
 // This example commands.ts shows you how to

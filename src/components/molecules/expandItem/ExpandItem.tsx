@@ -21,7 +21,10 @@ const ExpandItem = ({
 
   return (
     <ExpandItemContainer borders={borders} color={color}>
-      <ExpandButton onClick={() => setisOpen((state) => !state)}>
+      <ExpandButton
+        data-testid={`expand-button-${number}`}
+        onClick={() => setisOpen((state) => !state)}
+      >
         <span>{number}</span>
         <span>{name}</span>
         <ExpandIcon isOpen={isOpen}>
@@ -29,7 +32,7 @@ const ExpandItem = ({
           <BiMinus size="2rem" color={color} />
         </ExpandIcon>
       </ExpandButton>
-      <ExpandContent data-testid="expand-item" isOpen={isOpen}>
+      <ExpandContent data-testid={`expand-content-${number}`} isOpen={isOpen}>
         <div>{children}</div>
       </ExpandContent>
     </ExpandItemContainer>

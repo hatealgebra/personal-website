@@ -43,7 +43,7 @@ export const PureMyHobbies = ({ data }: any) => {
     );
   }
   return (
-    <MyHobbiesContainer>
+    <MyHobbiesContainer data-cy="hobbies-container">
       <HobbiesMenu
         menuState={choosenHobby}
         dispatch={setChoosenHobby}

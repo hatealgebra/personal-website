@@ -13,7 +13,7 @@ import { GrGithub } from "@react-icons/all-files/gr/GrGithub";
 import LinkList from "../../molecules/linkList/LinkList";
 import Link from "../../atoms/link/link.styled";
 import Theme from "../../particles/Theme";
-import { EXTERNALLINKS, LINKS } from "../../../utils/contants";
+import { EXTERNAL_LINKS, LINKS, SOCIAL_LINKS } from "../../../utils/contants";
 
 import copyWriteJSON from "../../../assets/content/copyWrite.json";
 
@@ -34,17 +34,14 @@ const Footer = ({}: FooterProps) => {
           <p>{footerContent.headingText}</p>
         </div>
         <Email>{footerContent.email}</Email>
-        <SocialIcons>
-          <Link target="_blank" to="https://www.instagram.com/hatealgebra/">
+        <SocialIcons data-cy="social-media">
+          <Link target="_blank" to={SOCIAL_LINKS.instagram}>
             <GrInstagram color={Theme.color.gold} fontSize="1.7em" />
           </Link>
-          <Link
-            target="_blank"
-            to="https://www.linkedin.com/in/pavel-vondra-603012201/"
-          >
+          <Link target="_blank" to={SOCIAL_LINKS.linkedIn}>
             <GrLinkedin color={Theme.color.gold} fontSize="1.7em" />
           </Link>
-          <Link target="_blank" to="https://github.com/hatealgebra">
+          <Link target="_blank" to={SOCIAL_LINKS.github}>
             <GrGithub color={Theme.color.gold} fontSize="1.7em" />
           </Link>
         </SocialIcons>
@@ -62,8 +59,8 @@ const Footer = ({}: FooterProps) => {
             isExternal
             heading="Projects"
             linkData={[
-              { name: "Weather App", link: EXTERNALLINKS.weatherApp },
-              // { name: "Food Mood", link: EXTERNALLINKS.foodMood },
+              { name: "Weather App", link: EXTERNAL_LINKS.weatherApp },
+              // { name: "Food Mood", link: EXTERNAL_LINKS.foodMood },
             ]}
           />
         </LinkListContainer>
