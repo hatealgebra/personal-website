@@ -150,7 +150,8 @@ const IndexPage = () => {
         <div className="hero_part hero_part--hidden" />
         <div className="hero_part" />
         <h1>
-          Wel <br />
+          Wel
+          {windowSize.width! <= Theme.breakpoints.tablet && <br />}
           come.
         </h1>
         <HelloThereHero className={"hero_part--hidden"}>
