@@ -9,10 +9,10 @@
       },
       "myselfSection": {
         "heading": "My self",
-        "subheading": ["an", "aspiring", "front-end developer."],
+        "subheading": ["a", "junior", "front-end developer."],
         "text": [
-          "Felt in love with web development. I love when nice things are functional and helpful. Trying to become a good developer step by step. Learning new things, meeting new people, apprehending new pieces of information, till my brain can’t go further.",
-          "In the meantime, I’m a cat dad that plays basketball in Germany. Also, I’m searching for new sneakers, enjoy car sims, listen to music, or read Batman comics."
+          "Felt in love with web development. I love when nice things are functional and helpful. I'm currently working as junior frontend developer in Digital Vision where I learn new things, meet new people and apprehend new pieces of information, till my brain can’t go further.",
+          "In the meantime, I’m playing basketball and doing sports. Also, I’m searching for new sneakers, enjoy PS5 from time to me, listen to music, or read Batman comics."
         ]
       },
       "sectionWMyPhoto": {
@@ -28,10 +28,10 @@
       "aboutMe": {
         "introduction": [
           {
-            "heading": "Software engineer",
+            "heading": "Junior Front-end Developer",
             "text": [
-              "I’m currently working as a fresh software engineer in maintenance and support for a big corporation that makes banking solutions across the world.",
-              "Learning front-end development by myself almost for 2 years. I also have experience in the industry as IT Administrator. Currently looking for an extra part-time job, in best case scenario full remote."
+              "I’m currently working as a junior frontend developer in software agency named Digital Vision where I'm working on projects for LEGO and KIA.",
+              "My journey in IT started as 1st level support in Generali, through the software engineer in M&S in Diebold Nixdorf and finally ended in Digital Vision, where I'm working as FE dev."
             ]
           },
           {
@@ -50,11 +50,15 @@
         "race sims": "Another thing that allows me to get my happy hour of freedom is the racing sim. I love to play F1, Forza with the open world, or some of the serious IRacing, that has an awesome community.",
         "music": "I do not have a lot of addictions, but music is one of them. From rap, hip-hop through rock, and indie to electronic music like Swimming. I do listen to every genre almost possible. Mainly when working because it helps me to focus on the task."
       }
+    },
+    "contact": {
+      "position": "Currently Junior <br /> FE Developer at DigitalVision",
+      "location": "Based in Prague <br /> Czech republic"
     }
   },
   "menu": {
-    "1st": "Currently Software <br /> Engineer at Diebold Nixdorf",
-    "2nd": "Based in Pilsen <br /> Czech republic"
+    "1st": "Currently Junior <br /> FE Developer at DigitalVision",
+    "2nd": "Based in Prague <br /> Czech republic"
   },
   "footer": {
     "heading": ["Reach", "me out"],

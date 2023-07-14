@@ -12,6 +12,7 @@ import PageTemplate from "../components/templates/Page.template";
 import { SOCIAL_LINKS } from "../utils/contants";
 import useWindowSize from "../utils/hooks/useWindowSize";
 
+
 const ContactFooter = styled.footer`
   display: flex;
   justify-content: center;
@@ -46,10 +47,10 @@ const contact = () => {
       {windowWidth >= Theme.breakpoints.tablet && <TopBar contact />}
       <Header>
         <span>
-          Currently Software <br /> Engineer at Diebold Nixdorf
+          Currently Junior <br /> FE Developer at DigitalVision
         </span>
         <span>
-          Based in Pilsen <br /> Czech republic
+          Based in Prague <br /> Czech republic
         </span>
       </Header>
       <Container background="black">

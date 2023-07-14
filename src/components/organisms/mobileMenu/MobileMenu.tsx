@@ -40,10 +40,10 @@ const MobileMenu = ({ isOpen, close }: MobileMenuprops) => {
           ))}
         </MobileMenuNav>
         <p>
-          Currently Software <br /> Engineer at Diebold Nixdorf
+          Currently Junior <br /> FE Developer at DigitalVision
         </p>
         <p>
-          Based in Pilsen <br /> Czech republic
+          Based in Prague <br /> Czech republic
         </p>
       </MobileMenuNavContainer>
     </MobileMenuContainer>
