@@ -31,6 +31,21 @@ export const gatsbyImagesLab = () => {
           }
         }
       }
+      FEMChallenges: allFile(
+        sort: { order: ASC, fields: absolutePath }
+        filter: { relativeDirectory: { eq: "fem" } }
+        ) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   `);
   return data;
@@ -41,5 +56,6 @@ export const gatsbyImageslabPreview = () => {
   return [
     getImage(imageData.FoodMood.edges[0].node.childImageSharp),
     getImage(imageData.WeatherApp.edges[0].node.childImageSharp),
+    getImage(imageData.FEMChallenges.edges[0].node.childImageSharp),
   ];
 };

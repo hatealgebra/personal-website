@@ -23,7 +23,7 @@ export const ProjectDetailImages = styled.div`
   ${DEVICE.tablet} {
     padding-bottom: 0;
     margin-top: 0px;
-    margin-left: 50px;
+    margin-left: 8vw;
     grid-row: 1/3;
     grid-column: 2/3;
     flex-direction: row;
@@ -59,7 +59,7 @@ export const ProjectDetailImages = styled.div`
 export const ProjectDetailInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   min-height: 450px;
   width: fit-content;
   max-width: 500px;
@@ -90,7 +90,7 @@ export const ProjectDetailInfo = styled.div`
 
   ${DEVICE.tablet} {
     min-height: auto;
-    width: 300px;
+    width: 400px;
   }
 `;
 
