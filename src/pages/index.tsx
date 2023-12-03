@@ -126,7 +126,7 @@ const HeroContainer = styled.div<HeroContainerProps>`
   }
 `;
 
-const { heroSection, myselfSection, sectionMyPhoto } =
+const { heroSection, myselfSection } =
   CopyWriteJSON.pages.homepage;
 
 const IndexPage = () => {
@@ -136,6 +136,7 @@ const IndexPage = () => {
   const windowSize = useWindowSize();
 
   const imagesPreview = gatsbyImageslabPreview();
+  console.log(imagesPreview)
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
@@ -226,7 +227,7 @@ const IndexPage = () => {
               image={
                 <GatsbyImage
                   image={imagesPreview[index]}
-                  alt="Pancakes"
+                  alt={`preview image of ${data.name}`}
                   style={{ width: "100%", height: "100%" }}
                 />
               }
@@ -256,6 +257,7 @@ const IndexPage = () => {
                   style={{
                     width: "100%",
                     maxWidth: "800px",
+                    objectPosition:"bottom"
                   }}
                 />
               ),

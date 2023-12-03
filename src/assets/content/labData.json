@@ -17,6 +17,15 @@
       "preview_text": "Weather application, that shows weather and some tourist attractions.",
       "info_project": "Small SPA weather application, that displays current weather and forecast for the next hours/days. Also shows tourist POI.",
       "images": "../assets/images/weather-preview.jpg"
+    },
+    {
+      "name": "FEM Challenges",
+      "date": 2023,
+      "tech_stack": ["TypeScript", "Astro", "TailwindCSS", "Linaria", "Styled Components"],
+      "live_link": "https://www.frontendmentor.io/profile/hatealgebra",
+      "preview_text": "Frontend Mentor challenges.",
+      "info_project": "Set of challenges from platform Frontend Mentor. The project goal is to sharpen my skills and try new technologies.",
+      "images": "../assets/images/practice.jpg"
     }
   ]
 }

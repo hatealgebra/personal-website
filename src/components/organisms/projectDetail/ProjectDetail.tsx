@@ -54,9 +54,7 @@ const ProjectDetail = () => {
       projectModalState;
 
     const nameOfProject = heading.replace(" ", "");
-
     const imagesData = data[nameOfProject];
-    console.log(imagesData);
 
     return (
       <ProjectDetailContainer
