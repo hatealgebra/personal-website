@@ -40,10 +40,10 @@ const MobileMenu = ({ isOpen, close }: MobileMenuprops) => {
           ))}
         </MobileMenuNav>
         <p>
-          Currently Junior <br /> FE Developer at DigitalVision
+          Currently <br /> fullstack Developer at DigitalVision
         </p>
         <p>
-          Based in Prague <br /> Czech republic
+          Based in Regensburg <br /> Germany
         </p>
       </MobileMenuNavContainer>
     </MobileMenuContainer>

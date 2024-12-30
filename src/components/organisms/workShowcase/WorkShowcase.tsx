@@ -13,7 +13,7 @@ import { gatsbyImageslabPreview } from "../../../utils/helpers/graphql";
 const { work: workContent } = copyWriteJSON.pages;
 
 const WorkShowcase = () => {
-  const [typeOfWork, setTypeOfWork] = useState<"projects" | "lab">("lab");
+  const [typeOfWork, setTypeOfWork] = useState<"projects" | "lab">("projects");
 
   const imagesPreview = gatsbyImageslabPreview();
 
@@ -22,13 +22,11 @@ const WorkShowcase = () => {
       <SwitchMenu
         menuState={typeOfWork}
         dispatch={setTypeOfWork}
-        possibilities={["projects", "lab"]}
+        possibilities={["projects"]}
       />
       <p>{workContent.labText}</p>
       <div style={{ display: "flex", flexDirection: "column-reverse" }}>
-        {typeOfWork === "projects" ? (
-          <h3>No Projects here :(</h3>
-        ) : (
+        {
           LabDataJSON.lab.map((data, index) => (
             <ProjectPreview
               key={data.name + index}
@@ -48,7 +46,7 @@ const WorkShowcase = () => {
               {data.preview_text}
             </ProjectPreview>
           ))
-        )}
+        }
       </div>
     </Container>
   );

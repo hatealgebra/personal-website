@@ -26,6 +26,15 @@
       "preview_text": "Frontend Mentor challenges.",
       "info_project": "Set of challenges from platform Frontend Mentor. The project goal is to sharpen my skills and try new technologies.",
       "images": "../assets/images/practice.jpg"
+    },
+    {
+      "name": "Entertainment App",
+      "date": 2024,
+      "tech_stack": ["TypeScript", "React", "Node.js", "MongoDB", "Next.js", "Tailwind CSS", "Turborepo"],
+      "live_link": "https://fem-entertainment-app.netlify.app/",
+      "preview_text": "Full-stack Next.js entertainment web app",
+      "info_project": "MERN web application with authorization flow and own dataset. Other functionalities are search, listing, filtering and bookmarking the movies.",
+      "images": "../assets/images/web-entertainment-app.png"
     }
   ]
 }

@@ -55,7 +55,7 @@ const ProjectDetail = () => {
 
     const nameOfProject = heading.replace(" ", "");
     const imagesData = data[nameOfProject];
-
+    console.log({nameOfProject, data})
     return (
       <ProjectDetailContainer
         data-testid="project-detail-modal"

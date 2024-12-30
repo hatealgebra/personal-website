@@ -8,10 +8,10 @@
         ]
       },
       "myselfSection": {
-        "heading": "My self",
-        "subheading": ["a", "junior", "front-end developer."],
+        "heading": "Myself",
+        "subheading": ["a", "fullstack", "developer."],
         "text": [
-          "Felt in love with web development. I love when nice things are functional and helpful. I'm currently working as junior frontend developer in Digital Vision where I learn new things, meet new people and apprehend new pieces of information, till my brain can’t go further.",
+          "I fell in love with web development. I love it when nice things are functional and helpful. I'm currently working as a full-stack developer in Digital Vision where I learn new things, meet new people, and apprehend new pieces of information, till my brain can’t go further.",
           "In the meantime, I’m playing basketball and doing sports. Also, I’m searching for new sneakers, enjoy PS5 from time to me, listen to music, or read Batman comics."
         ]
       },
@@ -28,9 +28,9 @@
       "aboutMe": {
         "introduction": [
           {
-            "heading": "Junior Front-end Developer",
+            "heading": "Full-stack Developer",
             "text": [
-              "I’m currently working as a junior frontend developer in software agency named Digital Vision where I'm working on projects for LEGO and KIA.",
+              "I’m currently working as a fullstack developer in software agency named Digital Vision where I'm working on projects for LEGO and KIA.",
               "My journey in IT started as 1st level support in Generali, through the software engineer in M&S in Diebold Nixdorf and finally ended in Digital Vision, where I'm working as FE dev."
             ]
           },
@@ -52,12 +52,12 @@
       }
     },
     "contact": {
-      "position": "Currently Junior <br /> FE Developer at DigitalVision",
+      "position": "Currently <br /> Full-stack Developer at DigitalVision",
       "location": "Based in Prague <br /> Czech republic"
     }
   },
   "menu": {
-    "1st": "Currently Junior <br /> FE Developer at DigitalVision",
+    "1st": "Currently <br /> Full-stack Developer at DigitalVision",
     "2nd": "Based in Prague <br /> Czech republic"
   },
   "footer": {
