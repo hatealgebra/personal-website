@@ -45,6 +45,21 @@ export const gatsbyImagesLab = () => {
             }
           }
         }
+      },
+      EntertainmentApp: allFile(
+        sort: { order: ASC, fields: absolutePath }
+        filter: { relativeDirectory: { eq: "entertainmentApp" } }
+        ) {
+        edges {
+          node {
+            absolutePath
+            sourceInstanceName
+            relativeDirectory
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
       }
     }
   `);
@@ -57,5 +72,6 @@ export const gatsbyImageslabPreview = () => {
     getImage(imageData.FoodMood.edges[0].node.childImageSharp),
     getImage(imageData.WeatherApp.edges[0].node.childImageSharp),
     getImage(imageData.FEMChallenges.edges[0].node.childImageSharp),
+    getImage(imageData.EntertainmentApp.edges[0].node.childImageSharp),
   ];
 };

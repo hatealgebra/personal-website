@@ -136,7 +136,6 @@ const IndexPage = () => {
   const windowSize = useWindowSize();
 
   const imagesPreview = gatsbyImageslabPreview();
-  console.log(imagesPreview)
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
@@ -252,7 +251,7 @@ const IndexPage = () => {
             {
               children: (
                 <StaticImage
-                  src="../assets/images/portrait.jpg"
+                  src="../assets/images/portrait_2.jpg"
                   alt="Hobby photo"
                   style={{
                     width: "100%",
