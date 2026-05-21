@@ -47,7 +47,7 @@ const contact = () => {
       {windowWidth >= Theme.breakpoints.tablet && <TopBar contact />}
       <Header>
         <span>
-          Currently <br /> fullstack Developer at DigitalVision
+          Currently <br /> Full-stack Developer at SoulJourney Group
         </span>
         <span>
           Based in Regensburg <br /> Germany

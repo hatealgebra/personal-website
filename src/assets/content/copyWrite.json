@@ -3,26 +3,25 @@
     "homepage": {
       "heroSection": {
         "text": [
-          "This is my webpage, where I showcase ",
-          "myself and the work that is behind me. Enjoy!"
+          "This is my webpage where I showcase myself and the work I have done. Enjoy!"
         ]
       },
       "myselfSection": {
         "heading": "Myself",
         "subheading": ["a", "fullstack", "developer."],
         "text": [
-          "I fell in love with web development. I love it when nice things are functional and helpful. I'm currently working as a full-stack developer in Digital Vision where I learn new things, meet new people, and apprehend new pieces of information, till my brain can’t go further.",
-          "In the meantime, I’m playing basketball and doing sports. Also, I’m searching for new sneakers, enjoy PS5 from time to me, listen to music, or read Batman comics."
+          "I am currently working as a full-stack developer for the SoulJourney Group in Regensburg, Germany. In my career, I have worked on projects for The Lego Group, Kia, Vodafone, Diebold Nixdorf, and Achtsamkeitsakademie.",
+          "I also study the Software Development BSc program at the International University of Applied Sciences. I love learning new things and solving real-world problems."
         ]
       },
       "sectionWMyPhoto": {
-        "heading": ["Bball,", "nolan,", "race sims"],
-        "text": "Little about me. I do like to play basketball, so I can eat more cookies and Oreos, Whatever movie Christopher Nolan makes, it’s a must-see. And if I’m not doing any of the two activities that I’ve mentioned before I am probably channeling my inner Sir Lewis Hamilton on race simulators."
+        "heading": ["Bball,", "Nolan,", "race sims"],
+        "text": "Little about me. I like to play basketball, so I can eat more cookies and Oreos. Whatever movie Christopher Nolan makes is a must-see. And if I’m not doing one of those two activities, I am probably channeling my inner Sir Lewis Hamilton on race simulators."
       }
     },
     "work": {
       "heading": "MY WORK",
-      "labText": "Showcase my work in my free time. Either I'm learning new things, have new ideas or I want to showcase some of my skills. If you find anything interesting or bugs, please don't hesitate and contact me. Thank you."
+      "labText": "I showcase my work in my free time. Either I’m learning new things, have new ideas, or want to showcase some of my skills. If you find anything interesting or any bugs, please don't hesitate to contact me. Thank you."
     },
     "about": {
       "aboutMe": {
@@ -30,39 +29,40 @@
           {
             "heading": "Full-stack Developer",
             "text": [
-              "I’m currently working as a fullstack developer in software agency named Digital Vision where I'm working on projects for LEGO and KIA.",
-              "My journey in IT started as 1st level support in Generali, through the software engineer in M&S in Diebold Nixdorf and finally ended in Digital Vision, where I'm working as FE dev."
+              "My journey in IT started as 1st level support at Generali, through software engineering at M&S in Diebold Nixdorf, and finally led to SoulJourney Group, where I'm working as a full-stack developer."
             ]
           },
           {
             "heading": "My Aim",
             "text": [
-              "… is to write quality code that is functional, testable, and sustainable. I’m at the start to become a good developer and I’m open to new things and opportunities that can benefit me and the others along the way.",
-              "Also, I make some basic designing/prototyping as something that comes in handy, because on some of the projects I’ve done everything by myself. Check down below that tech stack I use and other skills."
+              "… is to deliver reliable, maintainable software that meets business needs and scales effectively. I focus on clean architecture, strong testing practices, and continuous improvement while staying open to new technologies and collaboration opportunities.",
+              "My primary experience spans backend and frontend development with TypeScript, React, Redux, Tailwind CSS, Node.js, Next.js/Astro, Express, and both NoSQL and SQL databases.",
+              "Recently, I have expanded my expertise in AWS, serverless functions, event-driven architectures, monorepo workflows, and AI-assisted development to accelerate delivery and improve productivity.",
+              "I also use collaboration and productivity tools such as Git, Figma, Jira/Asana, and maintain organization with Bullet Journal. For automation, I rely on Zapier and Activepieces. I speak Czech, English, German, and Slovak."
             ]
           }
         ],
-        "projects": "Sadly I don’t have currently any real-work application that is normally used, just learning and creating “lab” projects to showcase my work."
+        "projects": "Sadly, I don’t currently have any real-world application in regular use; I’m just learning and creating “lab” projects to showcase my work."
       },
       "myHobbies": {
-        "basketball": "One of my favorite hobbies to do, because it balances my life with the IT world. Currently, I’m playing for ASV Cham in Bavaria, Germany. Also, I like to watch from time to time some NBA games when there are some on schedule.",
-        "movies": "When I want to completely switch off and just chill, I do like to play some movies rather than tv shows. One of my fav movies is 500 days of summer and everything that has a fingerprint by Christopher Nolan.",
-        "race sims": "Another thing that allows me to get my happy hour of freedom is the racing sim. I love to play F1, Forza with the open world, or some of the serious IRacing, that has an awesome community.",
-        "music": "I do not have a lot of addictions, but music is one of them. From rap, hip-hop through rock, and indie to electronic music like Swimming. I do listen to every genre almost possible. Mainly when working because it helps me to focus on the task."
+        "basketball": "One of my favorite hobbies is basketball because it balances my life with the IT world. Currently, I play for ASV Cham in Bavaria, Germany. I also like to watch NBA games from time to time when they are on.",
+        "movies": "When I want to completely switch off and just relax, I prefer watching movies rather than TV shows. One of my favorite movies is 500 Days of Summer, and I watch anything with Christopher Nolan’s signature style.",
+        "race sims": "Another thing that gives me a happy hour of freedom is racing sims. I love to play F1, open-world Forza, or some serious iRacing with its awesome community.",
+        "music": "I don't have many addictions, but music is one of them. From rap and hip-hop through rock and indie to electronic music like Stimming. I listen to almost every genre, mainly when working because it helps me focus."
       }
     },
     "contact": {
-      "position": "Currently <br /> Full-stack Developer at DigitalVision",
-      "location": "Based in Prague <br /> Czech republic"
+      "position": "Currently <br /> Full-stack Developer at SoulJourney Group",
+      "location": "Based in Regensburg <br /> Bavaria, Germany"
     }
   },
   "menu": {
-    "1st": "Currently <br /> Full-stack Developer at DigitalVision",
-    "2nd": "Based in Prague <br /> Czech republic"
+    "1st": "Currently <br /> Full-stack Developer at SoulJourney Group",
+    "2nd": "Based in Regensburg <br /> Bavaria, Germany"
   },
   "footer": {
     "heading": ["Reach", "me out"],
-    "headingText": "You can contact me either via the social links down below or write me an email via email link. Looking forward to hearing from you.",
+    "headingText": "You can contact me either via the social links below or by writing me an email. I’m looking forward to hearing from you.",
     "email": "contact@pavel-vondra.com"
   }
 }

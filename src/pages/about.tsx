@@ -108,7 +108,7 @@ const about = () => {
             ))}
           </>
         ))}
-        <ExpandMenu>
+        {/* <ExpandMenu>
           <ExpandItem borders="up" number="01" color="white" name="Tech Stack">
             {data.techStackImages.nodes.map((item, index) => (
               <GatsbyImage
@@ -143,7 +143,7 @@ const about = () => {
           >
             <p>{aboutMe.projects}</p>
           </ExpandItem>
-        </ExpandMenu>
+        </ExpandMenu> */}
       </Container>
 
       {windowSize.width && windowSize.width >= Theme.breakpoints.tablet ? (

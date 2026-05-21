@@ -28,10 +28,10 @@ export const PureMyHobbies = ({ data }: any) => {
 
   const windowSize = useWindowSize();
   function Scene() {
-    const basketball = useLoader(GLTFLoader, data[1]) as GLTF;
-    const music = useLoader(GLTFLoader, data[3]) as GLTF;
-    const wheel = useLoader(GLTFLoader, data[0]) as GLTF;
     const tumbler = useLoader(GLTFLoader, data[2]) as GLTF;
+    const music = useLoader(GLTFLoader, data[3]) as GLTF;
+    const basketball = useLoader(GLTFLoader, data[1]) as GLTF;
+    const wheel = useLoader(GLTFLoader, data[0]) as GLTF;
     return choosenHobby === "basketball" ? (
       <primitive object={basketball.scene} scale={0.012} />
     ) : choosenHobby === "music" ? (
@@ -68,8 +68,8 @@ export const PureMyHobbies = ({ data }: any) => {
                 windowSize.width! >= Theme.breakpoints.tablet
                   ? 1
                   : windowSize.width! >= Theme.breakpoints.laptop
-                  ? 1.4
-                  : 1.1,
+                    ? 1.4
+                    : 1.1,
             }}
           >
             <pointLight position={[10, 10, 10]} />
